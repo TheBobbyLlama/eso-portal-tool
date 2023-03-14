@@ -1,24 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import { useSelector } from "react-redux";
+
+import Login from "./components/Login/Login";
+
+import { authSelectors } from "./store/authSlice";
+import spinner from "./assets/images/spinner.gif";
+import "./App.css";
 
 function App() {
+  const userLoading = useSelector(authSelectors.loading);
+  const user = useSelector(authSelectors.user);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <>
+      <header>
+        <h1>Roleplay Town Portals Editor</h1>
       </header>
-    </div>
+      <main>
+        {(() => {
+          if (userLoading) {
+            return <img alt="loading" src={spinner} />;
+          } else if (user) {
+            return <div>Authenticated!</div>
+          } else {
+            return <Login />
+          }
+        })()}
+      </main>
+    </>
   );
 }
 

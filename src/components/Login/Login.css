@@ -1,0 +1,38 @@
+#login {
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+	width: 300px;
+}
+
+#login > h2 {
+	margin-bottom: 12px;
+}
+
+#login > div {
+	display: flex;
+	gap: 10px;
+	width: 100%;
+}
+
+#login > div > label {
+	display: block;
+	text-align: right;
+	width: 80px;
+}
+
+#login > div > input {
+	flex-grow: 1;
+}
+
+#login > button {
+	margin: 12px 0 8px 0;
+}
+
+#login .loginError {
+	background-color: var(--panel-border);
+	border-radius: 4px;
+	color: var(--error-color);
+	padding: 4px 8px;
+}
