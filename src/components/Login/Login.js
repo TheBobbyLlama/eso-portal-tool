@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
-import { authSelectors } from "../../store/authSlice";
+import { authActions, authSelectors } from "../../store/authSlice";
 import "./Login.css";
 
 function validateInputs(email, password) {
@@ -13,19 +13,27 @@ function Login() {
 	const [password, setPassword] = useState("");
 
 	const error = useSelector(authSelectors.error);
+	const dispatch = useDispatch();
 
-	return <section id="login">
-		<h2>Login</h2>
-		<div>
-			<label>Email:</label>
-			<input type="text" value={email} onChange={(e) => { setEmail(e.target.value);}} />
-		</div>
-		<div>
-			<label>Password:</label>
-			<input type="password" value={password} onChange={(e) => { setPassword(e.target.value);}} />
-		</div>
-		<button disabled={!validateInputs(email, password)}>Login</button>
-		{error && <div className="loginError">{error}</div>}
+	const doLogin = (e) => {
+		e.preventDefault();
+		dispatch(authActions.login({ email, password }));
+	}
+
+	return <section>
+		<form id="login">
+			<h2>Login</h2>
+			<div>
+				<label>Email:</label>
+				<input type="text" value={email} onChange={(e) => { setEmail(e.target.value);}} />
+			</div>
+			<div>
+				<label>Password:</label>
+				<input type="password" value={password} onChange={(e) => { setPassword(e.target.value);}} />
+			</div>
+			<button type="submit" disabled={!validateInputs(email, password)} onClick={doLogin}>Login</button>
+			{error && <div className="loginError">{error}</div>}
+		</form>
 	</section>
 }
 

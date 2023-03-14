@@ -19,6 +19,14 @@
   top: 0;
 }
 
+button {
+  cursor: pointer;
+}
+
+button[disabled] {
+  pointer-events: none;
+}
+
 h1, h2, h3, h4, h5 {
   margin: 0;
   padding: 0;
@@ -27,6 +35,18 @@ h1, h2, h3, h4, h5 {
 h1 {
   margin: 20px 0px;
   text-align: center;
+}
+
+header {
+  display: flex;
+}
+
+header > div {
+  margin: 10px 10px 0 0;
+}
+
+header h1 {
+  flex-grow: 1;
 }
 
 main {
