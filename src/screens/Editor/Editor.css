@@ -1,0 +1,8 @@
+#editor h2 select {
+	background-color: var(--panel-inset);
+	border-color: var(--panel-inset);
+	border-radius: 0.333em;
+	color: white;
+	font-size: 1em;
+	padding: 0 0 0 0.25em;
+}

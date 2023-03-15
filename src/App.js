@@ -1,7 +1,8 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-import Login from "./components/Login/Login";
+import Login from "./screens/Login/Login";
+import Editor from "./screens/Editor/Editor";
 
 import { authActions, authSelectors } from "./store/authSlice";
 import spinner from "./assets/images/spinner.gif";
@@ -14,7 +15,7 @@ function App() {
 
   // Attempt to login using saved user data on startup.
   useEffect(() => {
-    dispatch(authActions.autoLogin());
+    setTimeout(() => { dispatch(authActions.autoLogin()); }, 100);
   }, []);
 
   const doLogout = () => {
@@ -32,7 +33,7 @@ function App() {
       <main>
         {(() => {
           if (user) {
-            return <div>Authenticated!</div>
+            return <Editor />
           } else if (userLoading) {
             return <img alt="loading" src={spinner} />;
           } else {

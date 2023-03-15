@@ -7,9 +7,20 @@ function loadUserData(uid) {
 	return new Promise((res, rej) => {
 		const userRef = ref(db, `users/${uid}`);
 
-		get(userRef).then((result) => {
+		get(userRef).then(async (result) => {
 			if (result.exists()) {
 				const output = { ...result.val(), uid };
+
+				output.permissions = output.permissions ? output.permissions.split("+") : [];
+
+				if (output.permissions.find(item => item === "developer")) {
+					output.towns = window.metadata?.towns || [];
+				}
+
+				if (!output.towns) {
+					output.towns = [];
+				}
+
 				res(output);
 			} else {
 				rej("No user data found.");
