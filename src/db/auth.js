@@ -36,7 +36,7 @@ function startupTasks() {
 
 		get(discordRef).then((result) => {
 			if (result.exists()) {
-				localStorage.setItem("metadata", window.metadata);
+				window.metadata = result.val();
 			}
 
 			if (auth.currentUser) {

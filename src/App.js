@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 import Login from "./screens/Login/Login";
 import Editor from "./screens/Editor/Editor";
+import ModalManager from "./screens/ModalManager/ModalManager";
 
 import { authActions, authSelectors } from "./store/authSlice";
 import spinner from "./assets/images/spinner.gif";
@@ -16,7 +17,7 @@ function App() {
   // Attempt to login using saved user data on startup.
   useEffect(() => {
     setTimeout(() => { dispatch(authActions.startupTasks()); }, 100);
-  }, []);
+  }, [ dispatch ]);
 
   const doLogout = () => {
     dispatch(authActions.logout());
@@ -41,6 +42,7 @@ function App() {
           }
         })()}
       </main>
+      <ModalManager />
     </>
   );
 }

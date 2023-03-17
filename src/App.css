@@ -61,6 +61,15 @@ main {
   padding-bottom: 20px;
 }
 
+p {
+  margin: 0;
+  padding: 0;
+}
+
+p + p {
+  margin-top: 10px;
+}
+
 section {
   background-color: var(--panel-background);
   border: solid 2px var(--panel-border);
