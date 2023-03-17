@@ -15,7 +15,7 @@ function App() {
 
   // Attempt to login using saved user data on startup.
   useEffect(() => {
-    setTimeout(() => { dispatch(authActions.autoLogin()); }, 100);
+    setTimeout(() => { dispatch(authActions.startupTasks()); }, 100);
   }, []);
 
   const doLogout = () => {

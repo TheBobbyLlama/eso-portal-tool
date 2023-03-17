@@ -2,6 +2,24 @@ import { createSlice } from "@reduxjs/toolkit";
 import { listener } from "./listener";
 import townFuncs from "../db/town";
 
+const baseTown = {
+	locations: [],
+};
+
+const baseLocation = {
+	name: "New Location",
+	portals: [],
+};
+
+const basePortal = {
+	destinations: [],
+	x: 0,
+	y: 0,
+	z: 0,
+	cx: 0,
+	cy: 0,
+}
+
 export const townSlice = createSlice({
 	name: "town",
 	initialState: {
@@ -9,11 +27,12 @@ export const townSlice = createSlice({
 		changed: false,
 	},
 	reducers: {
+		// Database operations
 		loadProductionData(state) { 
 			state.production = undefined;
 		},
 		loadProductionDataSuccess(state, action) {
-			state.production = action.payload;
+			state.production = { ...baseTown, ...action.payload };
 		},
 		loadTownData(state) {
 			state.backup = undefined;
@@ -21,12 +40,8 @@ export const townSlice = createSlice({
 			state.changed = false;
 		},
 		loadTownDataSuccess(state, action) {
-			state.backup = action.payload;
+			state.backup = { ...baseTown, ...action.payload };
 			state.working = JSON.parse(JSON.stringify(state.backup)); // Deep copy.
-		},
-		resetWorkingData(state) {
-			state.working = JSON.parse(JSON.stringify(state.backup)); // Deep copy.
-			state.changed = false;
 		},
 		saveProductionData(state) {
 			state.busy = true;
@@ -41,7 +56,98 @@ export const townSlice = createSlice({
 		},
 		setBusy(state, action) {
 			state.busy = action.payload;
-		}
+		},
+		// Data editing
+		resetWorkingData(state) {
+			state.working = JSON.parse(JSON.stringify(state.backup)); // Deep copy.
+			state.changed = false;
+		},
+		addLocation(state, action) {
+			state.working = { ...state.working };
+			state.working.locations = [...state.working.locations, { ...baseLocation, name: action.payload }];
+
+			if (state.working.locations.length === 1) {
+				state.working.locations[0].startLocation = 0;
+			}
+
+			state.changed = true;
+		},
+		deleteLocation(state, action) {
+			state.working = { ...state.working };
+			state.working.locations = state.working.locations.filter(item => item.name !== action.payload);
+
+			state.changed = true;
+		},
+		setStartLocation(state, action) {
+			const setLoc = state.working.locations.findIndex(item => item.name === action.payload.name);
+
+			if (setLoc > -1) {
+				state.working = { ...state.working };
+				state.working.locations = [...state.working.locations];
+				state.working.locations[setLoc] = { ...state.working.locations[setLoc], startLocation: true };
+
+				const oldStart = state.working.locations.findIndex(item => item.startLocation);
+
+				if (oldStart) {
+					state.working.locations[oldStart] = { ...state.working.location[oldStart] };
+					delete state.working.locations[oldStart].startLocation;
+				}
+
+				state.changed = true;
+			}
+		},
+		setLocationData(state, action) {
+			const editLoc = state.working.locations.findIndex(item => item.name === action.payload.name);
+
+			if (editLoc > -1) {
+				state.working = { ...state.working };
+				state.working.locations = [...state.working.locations];
+				state.working.locations[editLoc] = {...state.working.locations, ...action.payload.data};
+
+				state.changed = true;
+			}
+		},
+		addPortal(state, action) {
+			const editLoc = state.working.locations.findIndex(item => item.name === action.payload.name);
+
+			if (editLoc > -1) {
+				state.working = { ...state.working };
+				state.locations = [...state.working.locations];
+				state.locations[editLoc] = { ...state.locations[editLoc] };
+				state.locations[editLoc].portals = [...state.locations[editLoc].portals, { ...basePortal, id: Date.now() }];
+
+				state.changed = true;
+			}
+		},
+		deletePortal(state, action) {
+			const editLoc = state.working.locations.findIndex(item => item.name === action.payload.name);
+
+			if (editLoc > -1) {
+				state.working = { ...state.working };
+				state.locations = [...state.working.locations];
+				state.locations[editLoc] = { ...state.locations[editLoc] };
+				state.locations[editLoc].portals = state.locations[editLoc].portals.filter(item => item.id !== action.payload.id);
+
+				state.changed = true;
+			}
+		},
+		setPortalData(state, action) {
+			const editLoc = state.working.locations.findIndex(item => item.name === action.payload.name);
+
+			if (editLoc > -1) {
+				const editPortal = state.locations[editLoc].portals.findIndex(item => item.id === action.payload.id);
+
+				if (editPortal > -1) {
+					state.working = { ...state.working };
+					state.locations = [...state.working.locations];
+					state.locations[editLoc] = { ...state.locations[editLoc] };
+					state.locations[editLoc].portals = [...state.locations[editLoc].portals];
+					state.locations[editLoc].portals[editPortal] = { ...state.locations[editLoc].portals[editPortal], ...action.payload.data };
+
+					state.changed = true;
+				}
+			}
+		},
 	}
 });
 

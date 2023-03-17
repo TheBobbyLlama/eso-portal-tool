@@ -14,7 +14,14 @@ function TownEditingPanel({town}) {
 		return <img alt="loading" src={spinner} />;
 	}
 
-	return <div>Info for {town} will go here!</div>
+	return <div id="townEditor">
+		<div id="locationSelection">
+			<h3>Locations</h3>
+			<div id="locationList" className="selectionList">
+			</div>
+			<button>Add New</button>
+		</div>
+	</div>;
 }
 
 export default TownEditingPanel;

@@ -1,3 +1,14 @@
+#editor {
+	max-height: calc(100%);
+	width: calc(100% - 80px);
+}
+
+#editor h2 {
+	display: flex;
+	justify-content: center;
+	margin-bottom: 16px;
+}
+
 #editor h2 select {
 	background-color: var(--panel-inset);
 	border-color: var(--panel-inset);

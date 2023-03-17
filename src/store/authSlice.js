@@ -8,7 +8,7 @@ export const authSlice = createSlice({
 		busy: true,
 	},
 	reducers: {
-		autoLogin() { },
+		startupTasks() { },
 		login(state, action) {
 			state.busy = true;
 			state.error = undefined;
@@ -51,9 +51,9 @@ export const authSelectors = {
 }
 
 listener.startListening({
-	actionCreator: authActions.autoLogin,
+	actionCreator: authActions.startupTasks,
 	effect: async (action, listenerApi) => {
-		authFuncs.autoLogin().then((result) => {
+		authFuncs.startupTasks().then((result) => {
 			if (result) {
 				listenerApi.dispatch(authActions.loginSuccess(result));
 			} else {

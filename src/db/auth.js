@@ -29,12 +29,23 @@ function loadUserData(uid) {
 	})
 }
 
-function autoLogin() {
-	if (auth.currentUser) {
-		return loadUserData(auth.currentUser.uid);
-	} else {
-		return new Promise((res) => { res(false); });
-	}
+// Load metadata, then check if user is already logged in.
+function startupTasks() {
+	return new Promise((res) => {
+		const discordRef = ref(db, "metadata");
+
+		get(discordRef).then((result) => {
+			if (result.exists()) {
+				localStorage.setItem("metadata", window.metadata);
+			}
+
+			if (auth.currentUser) {
+				res(loadUserData(auth.currentUser.uid));
+			} else {
+				res(false);
+			}
+		});
+	});
 }
 
 function login(userData) {
@@ -58,7 +69,7 @@ function logout() {
 }
 
 const authFuncs = {
-	autoLogin,
+	startupTasks,
 	login,
 	logout,
 };

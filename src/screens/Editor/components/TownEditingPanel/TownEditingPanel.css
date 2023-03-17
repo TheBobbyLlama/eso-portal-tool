@@ -1,0 +1,20 @@
+#townEditor {
+	display: flex;
+}
+
+#locationSelection {
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+}
+
+#locationSelection h3 {
+	opacity: 0.5;
+	width: 100%;
+}
+
+#locationList {
+	margin-bottom: 10px;
+	max-height: calc(100vh - 240px);
+	min-width: 200px;
+}
