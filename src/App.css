@@ -95,9 +95,15 @@ section {
 	white-space: nowrap;
 }
 
-.selectionList  > div:hover {
+.selectionList > div:hover {
+  background-color: silver;
+}
+
+.selectionList  > div.active {
 	background-color: var(--item-active);
 	color: white;
+  font-weight: bold;
+  pointer-events: none;
 }
 
 @media screen and (max-width: 440px) {

@@ -62,9 +62,9 @@ export const townSlice = createSlice({
 			state.working = JSON.parse(JSON.stringify(state.backup)); // Deep copy.
 			state.changed = false;
 		},
-		addLocation(state, action) {
+		addLocation(state) {
 			state.working = { ...state.working };
-			state.working.locations = [...state.working.locations, { ...baseLocation, name: action.payload }];
+			state.working.locations = [...state.working.locations, { ...baseLocation, id: Date.now() }];
 
 			if (state.working.locations.length === 1) {
 				state.working.locations[0].startLocation = 0;
@@ -74,19 +74,19 @@ export const townSlice = createSlice({
 		},
 		deleteLocation(state, action) {
 			state.working = { ...state.working };
-			state.working.locations = state.working.locations.filter(item => item.name !== action.payload);
+			state.working.locations = state.working.locations.filter(item => item.id !== action.payload.locationId);
 
 			state.changed = true;
 		},
 		setStartLocation(state, action) {
-			const setLoc = state.working.locations.findIndex(item => item.name === action.payload.name);
+			const setLoc = state.working.locations.findIndex(item => item.id === action.payload.locationId);
 
 			if (setLoc > -1) {
+				const oldStart = state.working.locations.findIndex(item => item.startLocation);
+
 				state.working = { ...state.working };
 				state.working.locations = [...state.working.locations];
 				state.working.locations[setLoc] = { ...state.working.locations[setLoc], startLocation: true };
-
-				const oldStart = state.working.locations.findIndex(item => item.startLocation);
 
 				if (oldStart) {
 					state.working.locations[oldStart] = { ...state.working.location[oldStart] };
@@ -97,7 +97,7 @@ export const townSlice = createSlice({
 			}
 		},
 		setLocationData(state, action) {
-			const editLoc = state.working.locations.findIndex(item => item.name === action.payload.name);
+			const editLoc = state.working.locations.findIndex(item => item.id === action.payload.locationId);
 
 			if (editLoc > -1) {
 				state.working = { ...state.working };
@@ -108,7 +108,7 @@ export const townSlice = createSlice({
 			}
 		},
 		addPortal(state, action) {
-			const editLoc = state.working.locations.findIndex(item => item.name === action.payload.name);
+			const editLoc = state.working.locations.findIndex(item => item.id === action.payload.locationId);
 
 			if (editLoc > -1) {
 				state.working = { ...state.working };
@@ -120,22 +120,22 @@ export const townSlice = createSlice({
 			}
 		},
 		deletePortal(state, action) {
-			const editLoc = state.working.locations.findIndex(item => item.name === action.payload.name);
+			const editLoc = state.working.locations.findIndex(item => item.id === action.payload.locationId);
 
 			if (editLoc > -1) {
 				state.working = { ...state.working };
 				state.locations = [...state.working.locations];
 				state.locations[editLoc] = { ...state.locations[editLoc] };
-				state.locations[editLoc].portals = state.locations[editLoc].portals.filter(item => item.id !== action.payload.id);
+				state.locations[editLoc].portals = state.locations[editLoc].portals.filter(item => item.id !== action.payload.portalId);
 
 				state.changed = true;
 			}
 		},
 		setPortalData(state, action) {
-			const editLoc = state.working.locations.findIndex(item => item.name === action.payload.name);
+			const editLoc = state.working.locations.findIndex(item => item.id === action.payload.locationId);
 
 			if (editLoc > -1) {
-				const editPortal = state.locations[editLoc].portals.findIndex(item => item.id === action.payload.id);
+				const editPortal = state.locations[editLoc].portals.findIndex(item => item.id === action.payload.portalId);
 
 				if (editPortal > -1) {
 					state.working = { ...state.working };

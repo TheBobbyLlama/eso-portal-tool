@@ -25,7 +25,7 @@ function loadTownData(townName) {
 			if (result.exists()) {
 				res(result.val());
 			} else {
-				res({ });
+				res({ name: townName });
 			}
 		}).catch(rej);
 	})
