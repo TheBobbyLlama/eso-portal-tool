@@ -1,11 +1,13 @@
 #townEditor {
 	display: flex;
+	gap: 20px;
 }
 
 #locationSelection {
 	align-items: center;
 	display: flex;
 	flex-direction: column;
+	padding-bottom: 10px;
 }
 
 #locationSelection h3 {
@@ -17,4 +19,10 @@
 	margin-bottom: 10px;
 	max-height: calc(100vh - 240px);
 	min-width: 200px;
+}
+
+@media screen and (max-width: 1000px) {
+	#townEditor {
+		flex-wrap: wrap;
+	}
 }

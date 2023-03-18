@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
+import LocationEditingPanel from "../LocationEditingPanel/LocationEditingPanel";
+
 import { townActions, townSelectors } from "../../../../store/townSlice";
 
 import spinner from "../../../../assets/images/spinner.gif";
@@ -18,17 +20,26 @@ function TownEditingPanel({town}) {
 			} else {
 				setCurLocation(townData.locations[townData.locations.length - 1].id);
 			}
+
+			dispatch(townActions.setLocationFilter([]));
+		} else {
+			setCurLocation(null);
 		}
 	}, [townData?.locations?.length])
 
 	if (!town) {
 		return null;
-	} else if (!townData) {
-		return <img alt="loading" src={spinner} />;
+	} else if ((!townData) || ((townData.locations.length) && (!townData.locations.find(location => location.id === curLocation)))) {
+		return <div id="spinner"><img alt="loading" src={spinner} /></div>;
 	}
 
 	const addLocation = () => {
 		dispatch(townActions.addLocation());
+	}
+
+	const changeLocation = (newId) => {
+		setCurLocation(newId);
+		dispatch(townActions.setLocationFilter([]));
 	}
 
 	return <div id="townEditor">
@@ -39,14 +50,15 @@ function TownEditingPanel({town}) {
 					return <div
 						key={location.id}
 						className={(location.id === curLocation) ? "active" : ""}
-						onClick={() => { setCurLocation(location.id); }}
+						onClick={() => { changeLocation(location.id); }}
 					>
-						{location.name || "New Location"}
+						{location.name || "Unnamed Location"}
 					</div>;
 				})}
 			</div>
 			<button onClick={addLocation}>Add New</button>
 		</div>
+		{curLocation ? <LocationEditingPanel location={townData.locations.find(location => location.id === curLocation)} /> : <div />}
 	</div>;
 }
 

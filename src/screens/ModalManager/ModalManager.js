@@ -1,5 +1,6 @@
 import { useSelector } from "react-redux";
 import ModalGeneric from "./components/ModalGeneric/ModalGeneric";
+import ModalHouseFilter from "./components/ModalHouseFilter/ModalHouseFilter";
 
 import { modalKey, modalSelectors } from "../../store/modalSlice";
 
@@ -15,11 +16,12 @@ function ModalManager() {
 			case modalKey.generic:
 				ModalComponent = ModalGeneric;
 				break;
+			case modalKey.houseStyle:
+				ModalComponent = ModalHouseFilter;
+				break;
 			default:
 				ModalComponent = null;
 		}
-
-		console.log(ModalComponent);
 
 		if (ModalComponent) {
 			return <div id="modalBG">

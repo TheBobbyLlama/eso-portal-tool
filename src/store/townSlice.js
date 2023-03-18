@@ -7,7 +7,9 @@ const baseTown = {
 };
 
 const baseLocation = {
-	name: "New Location",
+	name: "Unnamed Location",
+	houseId: "1",
+	owner: "",
 	portals: [],
 };
 
@@ -25,6 +27,7 @@ export const townSlice = createSlice({
 	initialState: {
 		busy: false,
 		changed: false,
+		filter: [],
 	},
 	reducers: {
 		// Database operations
@@ -47,6 +50,7 @@ export const townSlice = createSlice({
 			state.busy = true;
 		},
 		saveTownData(state) {
+			state.working = { ...state.working, modified: Date.now() };
 			state.busy= true;
 			state.changed = false;
 		},
@@ -76,33 +80,38 @@ export const townSlice = createSlice({
 			state.working = { ...state.working };
 			state.working.locations = state.working.locations.filter(item => item.id !== action.payload.locationId);
 
+			// TODO - Remove portal destinations that point to the deleted location!
+
 			state.changed = true;
 		},
-		setStartLocation(state, action) {
-			const setLoc = state.working.locations.findIndex(item => item.id === action.payload.locationId);
-
-			if (setLoc > -1) {
-				const oldStart = state.working.locations.findIndex(item => item.startLocation);
-
-				state.working = { ...state.working };
-				state.working.locations = [...state.working.locations];
-				state.working.locations[setLoc] = { ...state.working.locations[setLoc], startLocation: true };
-
-				if (oldStart) {
-					state.working.locations[oldStart] = { ...state.working.location[oldStart] };
-					delete state.working.locations[oldStart].startLocation;
-				}
-
-				state.changed = true;
-			}
+		setLocationFilter(state, action) {
+			state.filter = action.payload;
 		},
+		// setStartLocation(state, action) {
+		// 	const setLoc = state.working.locations.findIndex(item => item.id === action.payload.locationId);
+
+		// 	if (setLoc > -1) {
+		// 		const oldStart = state.working.locations.findIndex(item => item.startLocation);
+
+		// 		state.working = { ...state.working };
+		// 		state.working.locations = [...state.working.locations];
+		// 		state.working.locations[setLoc] = { ...state.working.locations[setLoc], startLocation: true };
+
+		// 		if (oldStart) {
+		// 			state.working.locations[oldStart] = { ...state.working.location[oldStart] };
+		// 			delete state.working.locations[oldStart].startLocation;
+		// 		}
+
+		// 		state.changed = true;
+		// 	}
+		// },
 		setLocationData(state, action) {
 			const editLoc = state.working.locations.findIndex(item => item.id === action.payload.locationId);
 
 			if (editLoc > -1) {
 				state.working = { ...state.working };
 				state.working.locations = [...state.working.locations];
-				state.working.locations[editLoc] = {...state.working.locations, ...action.payload.data};
+				state.working.locations[editLoc] = {...state.working.locations[editLoc], ...action.payload.data};
 
 				state.changed = true;
 			}
@@ -159,6 +168,9 @@ export const townSelectors = {
 	},
 	changed: (state) => {
 		return state.town.changed;
+	},
+	filter: (state) => {
+		return state.town.filter;
 	},
 	production: (state) => {
 		return state.town.production;

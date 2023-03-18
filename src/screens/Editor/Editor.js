@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import TownEditingPanel from "./components/TownEditingPanel/TownEditingPanel";
+import Toolbar from "./components/Toolbar/Toolbar";
 
 import { authSelectors } from "../../store/authSlice";
 import { townActions } from "../../store/townSlice";
@@ -36,6 +37,7 @@ function Editor() {
 			}
 		})()}
 		<TownEditingPanel town={town} />
+		<Toolbar />
 	</section>
 }
 

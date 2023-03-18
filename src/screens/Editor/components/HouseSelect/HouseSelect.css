@@ -1,0 +1,11 @@
+#houseSelect img {
+	background-color: var(--panel-border);
+	border: none;
+	border-radius: 4px;
+	height: 32px;
+	width: 32px;
+}
+
+#houseSelect select {
+	max-width: 200px;
+}

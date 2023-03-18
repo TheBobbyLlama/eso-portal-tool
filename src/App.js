@@ -6,12 +6,15 @@ import Editor from "./screens/Editor/Editor";
 import ModalManager from "./screens/ModalManager/ModalManager";
 
 import { authActions, authSelectors } from "./store/authSlice";
+import { modalActions, modalKey } from "./store/modalSlice";
+import { townSelectors } from "./store/townSlice";
 import spinner from "./assets/images/spinner.gif";
 import "./App.css";
 
 function App() {
   const userLoading = useSelector(authSelectors.busy);
   const user = useSelector(authSelectors.user);
+  const changed = useSelector(townSelectors.changed);
   const dispatch = useDispatch();
 
   // Attempt to login using saved user data on startup.
@@ -20,7 +23,18 @@ function App() {
   }, [ dispatch ]);
 
   const doLogout = () => {
-    dispatch(authActions.logout());
+    if (changed) {
+      dispatch(modalActions.showModal({
+        key: modalKey.generic,
+        data: {
+          title: `Confirm`,
+          text: "You have unsaved changes.  Are you sure you want to log out?",
+          action: authActions.logout(),
+        }
+      }));
+    } else {
+      dispatch(authActions.logout());
+    }
   }
 
   return (

@@ -1,0 +1,9 @@
+#toolbar {
+	align-items: center;
+	border-top: solid 1px var(--panel-border);
+	display: flex;
+	flex-wrap: wrap;
+	gap: max(min(2vw, 40px), 20px);
+	justify-content: center;
+	padding-top: 16px;
+}

@@ -33,6 +33,6 @@
 #login .loginError {
 	background-color: var(--panel-border);
 	border-radius: 4px;
-	color: var(--error-color);
+	color: var(--error-background);
 	padding: 4px 8px;
 }

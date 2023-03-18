@@ -3,6 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 export const modalKey = {
 	clear: null,
 	generic: 1,
+	houseStyle:2,
 }
 
 export const modalSlice = createSlice({
@@ -12,7 +13,7 @@ export const modalSlice = createSlice({
 	},
 	reducers: {
 		showModal(state, action) {
-			state = action.payload;
+			Object.entries(action.payload).forEach(([key, value]) => { state[key] = value; });
 		}
 	}
 });

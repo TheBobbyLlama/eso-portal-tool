@@ -8,9 +8,18 @@ function ModalGeneric() {
 	const doAction = () => {
 		if (modalData.action) {
 			dispatch(modalData.action);
+
+			// Clear the modal if we're not chaining into a different one.
+			if (!modalData.action.type.startsWith("modal")) {
+				dispatch(modalActions.showModal({ key: modalKey.clear }));
+			}
 		} else {
 			dispatch(modalActions.showModal({ key: modalKey.clear }));
 		}
+	}
+
+	const cancelAction= () => {
+		dispatch(modalActions.showModal({ key: modalKey.clear }));
 	}
 
 	return <section>
@@ -19,6 +28,7 @@ function ModalGeneric() {
 			modalData.text.map((item, index) => <p key={index}>{item}</p>) : <p>{modalData.text}</p>}
 		<div>
 			<button onClick={doAction}>{modalData.buttonLabel || "Ok"}</button>
+			{modalData.action && <button onClick={cancelAction}>Cancel</button>}
 		</div>
 	</section>;
 }

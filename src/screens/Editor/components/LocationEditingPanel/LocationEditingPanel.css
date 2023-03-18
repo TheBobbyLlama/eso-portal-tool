@@ -1,0 +1,44 @@
+#locationEditor {
+	align-items: flex-start;
+	border-left: solid 1px var(--panel-border);
+	border-top: solid 1px var(--panel-border);
+	border-top-left-radius: 6px;
+	display: flex;
+	flex-grow: 1;
+	gap: 20px;
+	justify-content: space-between;
+	padding: 20px 20px 10px 20px;
+	position: relative;
+}
+
+#locationEditor > div:first-child {
+	background-color: var(--panel-background);
+	color: var(--panel-border);
+	font-weight: bold;
+	left: 6px;
+	padding: 0 4px;
+	position: absolute;
+	top: -0.75em;
+}
+
+#locationEditor .formGroup {
+	min-height: 32px;
+}
+
+#locationForm {
+	align-items: flex-start;
+	display: flex;
+	flex-grow: 1;
+	flex-wrap: wrap;
+	gap: 20px;
+}
+
+#locationForm input[type='text'] {
+	width: 200px;
+}
+
+@media screen and (max-width: 1000px) {
+	#locationEditor {
+		width: 100%;
+	}
+}
