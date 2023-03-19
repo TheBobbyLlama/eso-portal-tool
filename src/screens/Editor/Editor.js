@@ -14,9 +14,9 @@ function Editor() {
 	const [town, setTown] = useState(user.towns.length ? user.towns[0] : undefined);
 	const dispatch = useDispatch();
 
-	// Retrieve production town data on component load.
+	// Retrieve release town data on component load.
 	useEffect(() => {
-		dispatch(townActions.loadProductionData());
+		dispatch(townActions.loadReleaseData());
 	}, [ dispatch ]);
 
 	useEffect(() => {

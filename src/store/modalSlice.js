@@ -13,7 +13,8 @@ export const modalSlice = createSlice({
 	},
 	reducers: {
 		showModal(state, action) {
-			Object.entries(action.payload).forEach(([key, value]) => { state[key] = value; });
+			state.key = action.payload.key;
+			state.data = action.payload.data;
 		}
 	}
 });

@@ -3,9 +3,9 @@ import { get, ref, set } from "firebase/database";
 import db from ".";
 import { dbTransform } from "../util";
 
-function loadProductionData() {
+function loadReleaseData() {
 	return new Promise((res, rej) => {
-		const dataRef = ref(db, "production");
+		const dataRef = ref(db, "release");
 
 		get(dataRef).then(async (result) => {
 			if (result.exists()) {
@@ -31,9 +31,9 @@ function loadTownData(townName) {
 	})
 }
 
-function setProductionData(data) {
+function setReleaseData(data) {
 	return new Promise((res, rej) => {
-	const dataRef = ref(db, "production");
+	const dataRef = ref(db, "release");
 
 	data.timestamp = Date.now();
 
@@ -41,21 +41,19 @@ function setProductionData(data) {
 });
 }
 
-function setTownData(data) {
+function saveTownData(data) {
 	return new Promise((res, rej) => {
 		const dataRef = ref(db, `development/${dbTransform(data.name)}`);
-
-		data.timestamp = Date.now();
 
 		set(dataRef, data).then(res).catch(rej);
 	});
 }
 
 const townFuncs = {
-	loadProductionData,
+	loadReleaseData,
 	loadTownData,
-	setProductionData,
-	setTownData,
+	setReleaseData,
+	saveTownData,
 };
 
 export default townFuncs;

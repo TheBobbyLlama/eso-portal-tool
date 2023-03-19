@@ -40,17 +40,20 @@ function App() {
   return (
     <>
       <header>
+        <div>
+          {user && <>
+            <div>Welcome, {user.name}!</div>
+            <button id="logout" onClick={doLogout}>Logout</button>
+          </>}
+        </div>
         <h1>Roleplay Town Portals Editor</h1>
-        {user && <div>
-          <button id="logout" onClick={doLogout}>Logout</button>
-        </div>}
       </header>
       <main>
         {(() => {
           if (user) {
             return <Editor />
           } else if (userLoading) {
-            return <img alt="loading" src={spinner} />;
+            return <div id="spinner"><img alt="loading" src={spinner} /></div>;
           } else {
             return <Login />
           }

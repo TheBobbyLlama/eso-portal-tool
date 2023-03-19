@@ -15,7 +15,7 @@
 	align-items: center;
 	display: flex;
 	flex-direction: column;
-	max-width: 400px;
+	width: 400px;
 }
 
 #modalBG > section > h2 {

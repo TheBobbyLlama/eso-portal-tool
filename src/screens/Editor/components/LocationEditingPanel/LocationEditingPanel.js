@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { useDispatch } from "react-redux";
 
 import HouseSelect from "../HouseSelect/HouseSelect";
+import PortalEditor from "../PortalEditor/PortalEditor";
 
 import { townActions } from "../../../../store/townSlice";
 import { modalActions, modalKey } from "../../../../store/modalSlice";
@@ -10,7 +11,7 @@ import "./LocationEditingPanel.css";
 
 function getDefaultFormValues(location) {
 	if (location) {
-		return { name: location.name, public: location.public || false, houseId: location.houseId, owner: location.owner };
+		return { name: location.name, public: location.public || false, houseId: location.houseId, owner: location.owner, description: location.description || "" };
 	}
 }
 
@@ -52,33 +53,39 @@ function LocationEditingPanel({ location }) {
 			key: modalKey.generic,
 			data: {
 				title: `Delete ${location.name || "This Location"}?`,
-				text: "This action cannot be undone.",
+				text: "This action cannot only be undone by reverting all unsaved changes.",
 				action: townActions.deleteLocation({ locationId: location.id }),
 			}
 		}));
 	}
 
-	return <div id="locationEditor">
-		<div><label>Current Location</label></div>
-			<div id="locationForm">
-			<div className="formGroup">
-				<label>Name:</label>
-				<input type="text" name="name" className={formData.name.length > 0 ? "" : "invalid"} placeholder="Unnamed Location" value={formData.name} onChange={changeFormData} />
+	return <>
+		<div id="locationEditor">
+			<div><label>Current Location</label></div>
+				<div id="locationForm">
+				<div className="formGroup">
+					<label>Name:</label>
+					<input type="text" name="name" className={formData.name.length > 0 ? "" : "invalid"} placeholder="Unnamed Location" value={formData.name} onChange={changeFormData} />
+				</div>
+				<div className="formGroup">
+					<input type="checkbox" ref={publicCheckRef} name="public" checked={!!formData.public} onChange={changeFormData} />
+					<label onClick={() => { publicCheckRef.current.click(); }}>Public</label>
+				</div>
+				<HouseSelect value={formData.houseId} onChange={changeFormData} />
+				<div className="formGroup">
+					<label>Owner:</label>
+					<input type="text" name="owner" className={validateAccountName(formData.owner) ? "" : "invalid"} value={formData.owner} onChange={changeFormData} />
+				</div>
+				<div className="textBox">
+					<textarea name="description" value={formData.description} placeholder="Description (optional)" onChange={changeFormData}></textarea>
+				</div>
 			</div>
-			<div className="formGroup">
-				<input type="checkbox" ref={publicCheckRef} name="public" checked={!!formData.public} onChange={changeFormData} />
-				<label onClick={() => { publicCheckRef.current.click(); }}>Public</label>
-			</div>
-			<HouseSelect value={formData.houseId} onChange={changeFormData} />
-			<div className="formGroup">
-				<label>Owner:</label>
-				<input type="text" name="owner" className={validateAccountName(formData.owner) ? "" : "invalid"} value={formData.owner} onChange={changeFormData} />
+			<div className="formGroup deleteLoc">
+				<button className="deleteButton" onClick={promptDeleteLocation}>Delete</button>
 			</div>
 		</div>
-		<div className="formGroup deleteLoc">
-			<button className="deleteButton" onClick={promptDeleteLocation}>Delete</button>
-		</div>
-	</div>;
+		<PortalEditor location={location} />
+	</>;
 }
 
 export default LocationEditingPanel;

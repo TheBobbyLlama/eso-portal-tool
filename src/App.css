@@ -26,12 +26,27 @@
   top: 0;
 }
 
+button {
+  background-color: #e0e0e0;
+  border-radius: 4px;
+}
+
 button, input[type='checkbox'] {
   cursor: pointer;
 }
 
 button[disabled] {
   pointer-events: none;
+}
+
+button:hover {
+  background-color: white;
+}
+
+code {
+  background-color: var(--panel-inset);
+  border-radius: 2px;
+  padding: 0 8px;
 }
 
 h1, h2, h3, h4, h5, label {
@@ -47,14 +62,29 @@ h1 {
 
 header {
   display: flex;
+  flex-direction: column;
 }
 
 header > div {
-  margin: 10px 20px 0 0;
+  align-items: flex-start;
+  color: rgba(255, 255, 255, 0.35);
+  display: flex;
+  justify-content: space-between;
+  margin: 0 20px;
+}
+
+header > div > button {
+  position: relative;
+  top: 4px;
 }
 
 header h1 {
   flex-grow: 1;
+  margin-top: 0;
+}
+
+input[readonly] {
+  background-color: gray;
 }
 
 main {
@@ -72,7 +102,7 @@ p {
   padding: 0;
 }
 
-p + p {
+p + p, p + code, code + p {
   margin-top: 10px;
 }
 
@@ -122,6 +152,10 @@ section {
   margin-right: -10px;
   padding-left: 8px;
   position: relative;
+}
+
+.formGroup > label {
+  white-space: nowrap;
 }
 
 .invalid {

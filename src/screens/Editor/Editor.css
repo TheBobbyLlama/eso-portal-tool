@@ -1,11 +1,12 @@
 #editor {
-	max-height: calc(100%);
+	min-width: 1000px;
 	width: calc(100% - 80px);
 }
 
 #editor h2 {
+	align-items: center;
 	display: flex;
-	justify-content: center;
+	flex-direction: column;
 	margin-bottom: 16px;
 }
 

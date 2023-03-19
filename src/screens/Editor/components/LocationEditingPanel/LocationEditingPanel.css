@@ -13,7 +13,7 @@
 
 #locationEditor > div:first-child {
 	background-color: var(--panel-background);
-	color: var(--panel-border);
+	color: rgba(255, 255, 255, 0.5);
 	font-weight: bold;
 	left: 6px;
 	padding: 0 4px;
@@ -37,8 +37,13 @@
 	width: 200px;
 }
 
-@media screen and (max-width: 1000px) {
-	#locationEditor {
-		width: 100%;
-	}
+#locationForm .textBox {
+	flex-grow: 1;
+}
+
+#locationForm textarea {
+	border-radius: 4px;
+	height: 4.5em;
+	resize: none;
+	width: 100%;
 }

@@ -1,6 +1,17 @@
 import { useDispatch, useSelector } from "react-redux";
 import { modalActions, modalKey, modalSelectors } from "../../../../store/modalSlice";
 
+function generateTextMarkup(text, index) {
+	const split = text.split(":");
+
+	switch(split[0]) {
+		case "CODE":
+			return <code key={index}>{split.slice(1).join(":")}</code>;
+		default:
+			return <p key={index}>{text}</p>;
+	}
+}
+
 function ModalGeneric() {
 	const modalData = useSelector(modalSelectors.data);
 	const dispatch = useDispatch();
@@ -22,10 +33,10 @@ function ModalGeneric() {
 		dispatch(modalActions.showModal({ key: modalKey.clear }));
 	}
 
-	return <section>
+	return <section style={{ minWidth: modalData.width ? modalData.width : "auto" }}>
 		<h2>{modalData.title}</h2>
 		{ modalData.text.map ?
-			modalData.text.map((item, index) => <p key={index}>{item}</p>) : <p>{modalData.text}</p>}
+			modalData.text.map((item, index) => generateTextMarkup(item, index)) : generateTextMarkup(modalData.text)}
 		<div>
 			<button onClick={doAction}>{modalData.buttonLabel || "Ok"}</button>
 			{modalData.action && <button onClick={cancelAction}>Cancel</button>}

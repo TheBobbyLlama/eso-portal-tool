@@ -58,7 +58,9 @@ function TownEditingPanel({town}) {
 			</div>
 			<button onClick={addLocation}>Add New</button>
 		</div>
-		{curLocation ? <LocationEditingPanel location={townData.locations.find(location => location.id === curLocation)} /> : <div />}
+		{curLocation ? <div id="location">
+			<LocationEditingPanel location={townData.locations.find(location => location.id === curLocation)} />
+		</div> : <div />}
 	</div>;
 }
 

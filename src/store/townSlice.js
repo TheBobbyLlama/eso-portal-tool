@@ -1,6 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { listener } from "./listener";
 import townFuncs from "../db/town";
+import { modalActions, modalKey } from "./modalSlice";
 
 const baseTown = {
 	locations: [],
@@ -18,8 +19,25 @@ const basePortal = {
 	x: 0,
 	y: 0,
 	z: 0,
-	cx: 0,
-	cy: 0,
+	mapX: 0,
+	mapY: 0,
+}
+
+// Firbase's Realtime Database does not store empty arrays or null values.  Make sure loaded data has the required structure.
+function setTownData(data) {
+	const result = { ...baseTown, ...data };
+
+	result.locations = [ ...result.locations ];
+
+	for (let loc = 0; loc < result.locations.length; loc++) {
+		result.locations[loc] = { ...baseLocation, ...result.locations[loc] };
+
+		for (let port = 0; port < result.locations[loc].portals.length; port++) {
+			result.locations[loc].portals[port] = { ...basePortal, ...result.locations[loc].portals[port] };
+		}
+	}
+
+	return result;
 }
 
 export const townSlice = createSlice({
@@ -31,11 +49,11 @@ export const townSlice = createSlice({
 	},
 	reducers: {
 		// Database operations
-		loadProductionData(state) { 
-			state.production = undefined;
+		loadReleaseData(state) { 
+			state.release = undefined;
 		},
-		loadProductionDataSuccess(state, action) {
-			state.production = { ...baseTown, ...action.payload };
+		loadReleaseDataSuccess(state, action) {
+			state.release = setTownData(action.payload);
 		},
 		loadTownData(state) {
 			state.backup = undefined;
@@ -43,10 +61,10 @@ export const townSlice = createSlice({
 			state.changed = false;
 		},
 		loadTownDataSuccess(state, action) {
-			state.backup = { ...baseTown, ...action.payload };
+			state.backup = setTownData(action.payload);
 			state.working = JSON.parse(JSON.stringify(state.backup)); // Deep copy.
 		},
-		saveProductionData(state) {
+		saveReleaseData(state) {
 			state.busy = true;
 		},
 		saveTownData(state) {
@@ -70,10 +88,6 @@ export const townSlice = createSlice({
 			state.working = { ...state.working };
 			state.working.locations = [...state.working.locations, { ...baseLocation, id: Date.now() }];
 
-			if (state.working.locations.length === 1) {
-				state.working.locations[0].startLocation = 0;
-			}
-
 			state.changed = true;
 		},
 		deleteLocation(state, action) {
@@ -87,24 +101,6 @@ export const townSlice = createSlice({
 		setLocationFilter(state, action) {
 			state.filter = action.payload;
 		},
-		// setStartLocation(state, action) {
-		// 	const setLoc = state.working.locations.findIndex(item => item.id === action.payload.locationId);
-
-		// 	if (setLoc > -1) {
-		// 		const oldStart = state.working.locations.findIndex(item => item.startLocation);
-
-		// 		state.working = { ...state.working };
-		// 		state.working.locations = [...state.working.locations];
-		// 		state.working.locations[setLoc] = { ...state.working.locations[setLoc], startLocation: true };
-
-		// 		if (oldStart) {
-		// 			state.working.locations[oldStart] = { ...state.working.location[oldStart] };
-		// 			delete state.working.locations[oldStart].startLocation;
-		// 		}
-
-		// 		state.changed = true;
-		// 	}
-		// },
 		setLocationData(state, action) {
 			const editLoc = state.working.locations.findIndex(item => item.id === action.payload.locationId);
 
@@ -121,9 +117,9 @@ export const townSlice = createSlice({
 
 			if (editLoc > -1) {
 				state.working = { ...state.working };
-				state.locations = [...state.working.locations];
-				state.locations[editLoc] = { ...state.locations[editLoc] };
-				state.locations[editLoc].portals = [...state.locations[editLoc].portals, { ...basePortal, id: Date.now() }];
+				state.working.locations = [...state.working.locations];
+				state.working.locations[editLoc] = { ...state.working.locations[editLoc] };
+				state.working.locations[editLoc].portals = [...state.working.locations[editLoc].portals, { ...basePortal, id: Date.now() }];
 
 				state.changed = true;
 			}
@@ -133,9 +129,9 @@ export const townSlice = createSlice({
 
 			if (editLoc > -1) {
 				state.working = { ...state.working };
-				state.locations = [...state.working.locations];
-				state.locations[editLoc] = { ...state.locations[editLoc] };
-				state.locations[editLoc].portals = state.locations[editLoc].portals.filter(item => item.id !== action.payload.portalId);
+				state.working.locations = [...state.working.locations];
+				state.working.locations[editLoc] = { ...state.working.locations[editLoc] };
+				state.working.locations[editLoc].portals = state.working.locations[editLoc].portals.filter(item => item.id !== action.payload.portalId);
 
 				state.changed = true;
 			}
@@ -144,14 +140,14 @@ export const townSlice = createSlice({
 			const editLoc = state.working.locations.findIndex(item => item.id === action.payload.locationId);
 
 			if (editLoc > -1) {
-				const editPortal = state.locations[editLoc].portals.findIndex(item => item.id === action.payload.portalId);
+				const editPortal = state.working.locations[editLoc].portals.findIndex(item => item.id === action.payload.portalId);
 
 				if (editPortal > -1) {
 					state.working = { ...state.working };
-					state.locations = [...state.working.locations];
-					state.locations[editLoc] = { ...state.locations[editLoc] };
-					state.locations[editLoc].portals = [...state.locations[editLoc].portals];
-					state.locations[editLoc].portals[editPortal] = { ...state.locations[editLoc].portals[editPortal], ...action.payload.data };
+					state.working.locations = [...state.working.locations];
+					state.working.locations[editLoc] = { ...state.working.locations[editLoc] };
+					state.working.locations[editLoc].portals = [...state.working.locations[editLoc].portals];
+					state.working.locations[editLoc].portals[editPortal] = { ...state.working.locations[editLoc].portals[editPortal], ...action.payload.data };
 
 					state.changed = true;
 				}
@@ -172,8 +168,8 @@ export const townSelectors = {
 	filter: (state) => {
 		return state.town.filter;
 	},
-	production: (state) => {
-		return state.town.production;
+	release: (state) => {
+		return state.town.release;
 	},
 	working: (state) => {
 		return state.town.working;
@@ -181,11 +177,11 @@ export const townSelectors = {
 }
 
 listener.startListening({
-	actionCreator: townActions.loadProductionData,
+	actionCreator: townActions.loadReleaseData,
 	effect: async (action, listenerApi) => {
-		townFuncs.loadProductionData().then((result) => {
+		townFuncs.loadReleaseData().then((result) => {
 			if (result) {
-				listenerApi.dispatch(townActions.loadProductionDataSuccess(result));
+				listenerApi.dispatch(townActions.loadReleaseDataSuccess(result));
 			}
 		});
 	}
@@ -205,10 +201,17 @@ listener.startListening({
 });
 
 listener.startListening({
-	actionCreator: townActions.saveProductionData,
+	actionCreator: townActions.saveReleaseData,
 	effect: async (action, listenerApi) => {
-		townFuncs.saveProductionData(listenerApi.getState().town.production).then(() => {
+		townFuncs.saveReleaseData(listenerApi.getState().town.release).then(() => {
 			listenerApi.dispatch(townActions.setBusy(false));
+			listenerApi.dispatch(modalActions.showModal({
+				key: modalKey.generic,
+				data: {
+					title: "Success",
+					text: "Data saved to release branch."
+				}
+			}));
 		});
 	}
 });
@@ -216,8 +219,17 @@ listener.startListening({
 listener.startListening({
 	actionCreator: townActions.saveTownData,
 	effect: async (action, listenerApi) => {
-		townFuncs.saveTownData(listenerApi.getState().town.working).then(() => {
+		const workingData = listenerApi.getState().town.working;
+
+		townFuncs.saveTownData(workingData).then(() => {
 			listenerApi.dispatch(townActions.saveTownDataSuccess());
+			listenerApi.dispatch(modalActions.showModal({
+				key: modalKey.generic,
+				data: {
+					title: "Success",
+					text: `Data for ${workingData.name} has been saved.`
+				}
+			}));
 		});
 	}
 });
