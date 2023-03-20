@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/eso-portal-tool/static/css/main.29fea308.css",
+    "main.js": "/eso-portal-tool/static/js/main.c3e18eb3.js",
+    "static/js/787.f0c240ff.chunk.js": "/eso-portal-tool/static/js/787.f0c240ff.chunk.js",
+    "static/media/spinner.gif": "/eso-portal-tool/static/media/spinner.7b4da7a15287c40931f1.gif",
+    "index.html": "/eso-portal-tool/index.html",
+    "main.29fea308.css.map": "/eso-portal-tool/static/css/main.29fea308.css.map",
+    "main.c3e18eb3.js.map": "/eso-portal-tool/static/js/main.c3e18eb3.js.map",
+    "787.f0c240ff.chunk.js.map": "/eso-portal-tool/static/js/787.f0c240ff.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.29fea308.css",
+    "static/js/main.c3e18eb3.js"
+  ]
+}
