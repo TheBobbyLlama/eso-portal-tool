@@ -38,7 +38,11 @@ function fillStructure(input, map) {
 }
 
 function printDescription(description) {
-	const match = description.match(/^(.{3}\w*)(\s.+)$/);
+	if ((!description) || (description.startsWith("("))) {
+		return description;
+	}
+
+	const match = description.match(/^(\S+)(\s.+)$/);
 	let result;
 
 	if (match.length === 3) {
@@ -138,6 +142,10 @@ function createPortalTable(data, locationTable) {
 
 				entry.location = locationTable.findIndex((loc) => loc.internalId === location.id);
 
+				if (locationTable[entry.location].houseId >= 500) {
+					entry.height = 200;
+				}
+
 				entry.destinations = [];
 
 				portal.destinations.forEach((dest) => {
@@ -197,6 +205,7 @@ export function exportAddonData(data) {
 				result += `\t\t{id = ${pIndex}, location = ${index+1}, destinations = {${portal.destinations.map((dest) => dest+1).join(",")}}, x = ${portal.x}, y = ${portal.y}, z = ${portal.z}, cx = ${portal.cx}, cy = ${portal.cy}`;
 
 				if ((portal.radius) && (portal.radius !== 10)) { result += `, radius = ${portal.radius}`; }
+				if (portal.height) { result += `, height = ${portal.height}`; }
 				if (portal.nameOverride) { result += `, nameOverride = "${portal.nameOverride}"`; }
 				if (portal.showMulti) { result += `, showMulti = ${portal.showMulti}`; }
 				if (portal.portalDescription) { result += `, portalDescription = "${printDescription(portal.portalDescription)}"`; }

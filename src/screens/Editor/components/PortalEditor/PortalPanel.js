@@ -160,7 +160,7 @@ function PortalPanel({ location, portal }) {
 					<div>
 						<div className="formGroup">
 							<label>Radius:</label>
-							<input type="number" name="radius" min="1" max="20" placeholder="10" value={formData.radius} onChange={changePortalInfo} />
+							<input type="number" name="radius" min="5" max="500" step="5" placeholder="10" value={formData.radius} onChange={changePortalInfo} />
 						</div>
 						<div className="formGroup">
 							<label>Map X:</label>
