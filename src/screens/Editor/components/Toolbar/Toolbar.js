@@ -63,10 +63,10 @@ function Toolbar() {
 	}
 
 	return <footer id="toolbar">
-		<button disabled={!workingTown.locations.length} onClick={doDownload}>Download</button>
-		<button disabled={!changed} onClick={doSave}>Save</button>
-		<button disabled={!changed} onClick={doRevert}>Revert</button>
-		{user.permissions.indexOf("developer") > -1 && <button className="devButton" disabled={!canMerge}>Merge</button>}
+		<button title="Download location data file for testing your changes" disabled={!workingTown.locations.length} onClick={doDownload}>Download</button>
+		<button title="Save changes" disabled={!changed} onClick={doSave}>Save</button>
+		<button title="Discard changes" disabled={!changed} onClick={doRevert}>Revert</button>
+		{user.permissions.indexOf("developer") > -1 && <button className="devButton" title="Prepare release" disabled={!canMerge}>Merge</button>}
 		{/* {user.permissions.indexOf("admin") > -1 && <button className="adminButton">Add User</button>} */}
 	</footer>;
 }

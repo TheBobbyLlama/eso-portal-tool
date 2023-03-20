@@ -123,6 +123,11 @@ section {
   border-color: var(--admin-color);
 }
 
+.deleteButton {
+  height: 1.5em;
+  width: 1.5em;
+}
+
 .deleteButton:not([disabled]) {
   color: var(--error-color);
 }
@@ -130,6 +135,12 @@ section {
 .deleteButton:hover {
   background-color: var(--error-background);
   border-color: var(--error-color);
+}
+
+.deleteButton::before {
+  content: 'X';
+  position: relative;
+  left: -2px;
 }
 
 .devButton:not([disabled]) {

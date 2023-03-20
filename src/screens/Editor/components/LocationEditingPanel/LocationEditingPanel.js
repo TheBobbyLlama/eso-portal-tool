@@ -100,7 +100,7 @@ function LocationEditingPanel({ location }) {
 				</div>
 			</div>
 			<div className="formGroup deleteLoc">
-				<button className="deleteButton" onClick={promptDeleteLocation}>Delete</button>
+				<button className="deleteButton" title="Delete Location" onClick={promptDeleteLocation}></button>
 			</div>
 		</div>
 		<PortalEditor location={location} />

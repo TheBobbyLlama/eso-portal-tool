@@ -2,7 +2,7 @@
 	border-left: solid 1px var(--panel-border);
 	border-top: solid 1px var(--panel-border);
 	display: flex;
-	padding: 10px 20px;
+	padding: 10px 0px 10px 20px;
 }
 
 #portalEditor > div:last-child {
@@ -40,6 +40,10 @@
 	width: 100%;
 }
 
+#portalPanel #destinationSelection select {
+	max-width: 140px;
+}
+
 #portalPanel .addList {
 	background-color: rgba(255, 255, 255, 0.1);
 	border: solid 1px var(--panel-border);
@@ -49,7 +53,7 @@
 	min-height: 1em;
 	overflow-x: hidden;
 	overflow-y: auto;
-	width: 160px;
+	width: 100%;
 }
 
 #portalPanel .addList  > div {
@@ -57,6 +61,7 @@
 	display: flex;
 	justify-content: space-between;
 	padding-left: 4px;
+	padding-right: 2px;
   	user-select: none;
 	white-space: nowrap;
 }
@@ -71,6 +76,7 @@
 
 #portalPanel .addList > div > button:before {
 	content: 'x';
+	left: 0;
 	position: relative;
 	top: -2px;
 }

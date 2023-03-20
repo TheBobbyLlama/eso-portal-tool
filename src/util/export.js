@@ -122,6 +122,7 @@ function createLocationTable(data, mapTable) {
 
 			if (typeof entry.houseId === "string") {
 				entry.houseId = Object.values(mapTable).find((map) => map.name === entry.houseId).id;
+				entry.displayName = entry.name;
 				entry.name = "";
 			}
 
@@ -170,7 +171,7 @@ export function exportAddonData(data) {
 	// HouseMaps
 	result += "RTP.HouseMaps = {\n";
 	Object.entries(houseMapsTable).forEach(([key, value]) => {
-		result += `\t[${key}] = {id = ${key}, map = "${value.map}"},${"\n"}`;
+		result += `\t[${key}] = {id = ${key}, map = "${value.map}"}, -- ${value.name}${"\n"}`;
 	});
 	result += "}\n";
 
@@ -199,7 +200,7 @@ export function exportAddonData(data) {
 		const portalList = portalTable.filter((portal) => portal.location === index);
 
 		if (portalList.length) {
-			result += `\t[${index+1}] = { -- ${location.name}\n`;
+			result += `\t[${index+1}] = { -- ${location.name || `${location.displayName} portal to ${townTable[location.townId].name}`}\n`;
 
 			portalList.forEach((portal, pIndex) => {
 				result += `\t\t{id = ${pIndex}, location = ${index+1}, destinations = {${portal.destinations.map((dest) => dest+1).join(",")}}, x = ${portal.x}, y = ${portal.y}, z = ${portal.z}, cx = ${portal.cx}, cy = ${portal.cy}`;
@@ -218,8 +219,8 @@ export function exportAddonData(data) {
 	});
 	result += "}\n";
 
-	// console.log(result);
-	// return;
+	console.log(result);
+	return;
 
 	const file = URL.createObjectURL(new Blob([ result ], { type: "text/plain" }));
 

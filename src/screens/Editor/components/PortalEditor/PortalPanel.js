@@ -127,17 +127,18 @@ function PortalPanel({ location, portal }) {
 					{formData.destinations.map((dest) => {
 						return <div key={dest}>
 							<div>{townData.locations.find(loc => loc.id === dest)?.name || "WHAT"}</div>
-							<button className="deleteButton" data-key={dest} onClick={removeDestination} />
+							<button className="deleteButton" title="Delete Destination" data-key={dest} onClick={removeDestination} />
 						</div>;
 					})}
 				</div>
 				<div className="formGroup">
+					<label>Add:</label>
 					<select ref={destRef} disabled={!destOptions.length}>
 						{destOptions.map((loc) => {
 							return <option key={loc.id} value={loc.id}>{loc.name}</option>;
 						})}
 					</select>
-					<button name="destinations" disabled={!destOptions.length} onClick={addDestination}>+</button>
+					<button name="destinations" title="Add Destination" disabled={!destOptions.length} onClick={addDestination}>+</button>
 				</div>
 			</div>
 			<div id="portalForm">
@@ -172,8 +173,8 @@ function PortalPanel({ location, portal }) {
 						</div>
 					</div>
 					<div>
-						<button onClick={pastePortalData}>Paste</button>
-						<button id="portalHelp" onClick={showPortalHelp}></button>
+						<button title="Paste Data from ESO" onClick={pastePortalData}>Paste</button>
+						<button id="portalHelp" title="How to Paste Data" onClick={showPortalHelp}></button>
 					</div>
 				</div>
 				<div className="formGroup">
@@ -190,7 +191,7 @@ function PortalPanel({ location, portal }) {
 			</div>
 		</div>
 		<div>
-			<button className="deleteButton" onClick={promptDeletePortal}>Delete</button>
+			<button className="deleteButton" title="Delete Portal" onClick={promptDeletePortal}></button>
 		</div>
 	</>
 }

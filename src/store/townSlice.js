@@ -11,7 +11,7 @@ const baseTown = {
 
 const baseLocation = {
 	name: "Unnamed Location",
-	houseId: "1",
+	houseId: 1,
 	owner: "",
 	portals: [],
 };
