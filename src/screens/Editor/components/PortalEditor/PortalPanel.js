@@ -28,9 +28,6 @@ function PortalPanel({ location, portal }) {
 		setFormData(getDefaultFormData(portal));
 	}, [portal]);
 
-
-	console.log(portal);
-
 	if ((!location) || (!location.portals.find(port => port.id === portal?.id))) {
 		return null;
 	}
@@ -40,12 +37,14 @@ function PortalPanel({ location, portal }) {
 		
 		if (e.target.type === "checkbox") {
 			newData[e.target.name] = !!e.target.checked;
+		} else if (e.target.name === "radius") {
+			newData[e.target.name] = Number(e.target.value) || 10;
 		} else {
 			newData[e.target.name] = e.target.value;
 		}
 		setFormData(newData);
 		dispatch(townActions.setPortalData({ locationId: location.id, portalId: portal.id, data: newData }));
-		console.log(newData);
+		// console.log(newData);
 	}
 
 	const addDestination = () => {
@@ -82,11 +81,11 @@ function PortalPanel({ location, portal }) {
 				newData.x = Number(result[1]);
 				newData.y = Number(result[2]);
 				newData.z = Number(result[3]);
-				newData.mapX = Number(result[4]);
-				newData.mapY = Number(result[5]);
+				newData.cx = Number(result[4]);
+				newData.cy = Number(result[5]);
 
 				setFormData(newData);
-			dispatch(townActions.setPortalData({ locationId: location.id, portalId: portal.id, data: newData }));
+				dispatch(townActions.setPortalData({ locationId: location.id, portalId: portal.id, data: newData }));
 			}
 		})
 	}
@@ -118,7 +117,7 @@ function PortalPanel({ location, portal }) {
 		}));
 	}
 
-	const destOptions = townData.locations.filter(loc => ((loc.id !== location.id) && (portal.destinations.indexOf(loc.id) < 0)));
+	const destOptions = townData.locations.filter(loc => ((loc.id !== location.id) && (typeof loc.houseId !== "string") && (portal.destinations.indexOf(loc.id) < 0)));
 	
 	return <>
 		<div id="portalPanel">
@@ -161,15 +160,15 @@ function PortalPanel({ location, portal }) {
 					<div>
 						<div className="formGroup">
 							<label>Radius:</label>
-							<input type="number" min="1" max="20" placeholder="10" value={formData.radius} />
+							<input type="number" name="radius" min="1" max="20" placeholder="10" value={formData.radius} onChange={changePortalInfo} />
 						</div>
 						<div className="formGroup">
 							<label>Map X:</label>
-							<input type="text" readOnly value={formData.mapX} />
+							<input type="text" readOnly value={formData.cx} />
 						</div>
 						<div className="formGroup">
 							<label>Map Y:</label>
-							<input type="text" readOnly value={formData.mapY} />
+							<input type="text" readOnly value={formData.cy} />
 						</div>
 					</div>
 					<div>

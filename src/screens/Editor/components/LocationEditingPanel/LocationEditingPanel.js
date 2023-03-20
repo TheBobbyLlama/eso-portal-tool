@@ -39,13 +39,32 @@ function LocationEditingPanel({ location }) {
 		if (e.target.type === "checkbox") {
 			newData[e.target.name] = !!e.target.checked;
 		} else if (e.target.name === "owner") {
-			newData[e.target.name] = `@${e.target.value.replace(/^@*/, "")}`;
+			if (typeof newData.houseId === "string") {
+				newData[e.target.name] = "";
+			} else {
+				newData[e.target.name] = `@${e.target.value.replace(/^@*/, "")}`;
+			}
+		} else if (e.target.name === "houseId") {
+			if (e.target.value.length <= 3) {
+				if (typeof newData.houseId === "string") {
+					newData.name = "Unnamed Location";
+				}
+
+				newData[e.target.name] = Number(e.target.value);
+			} else {
+				newData[e.target.name] = e.target.value;
+				newData.description = "";
+				newData.name = e.target.value;
+				newData.owner = "";
+				newData.public = false;
+
+			}
 		} else {
 			newData[e.target.name] = e.target.value;
 		}
 		setFormData(newData);
 		dispatch(townActions.setLocationData({ locationId: location.id, data: newData }));
-		console.log(newData);
+		// console.log(newData);
 	}
 
 	const promptDeleteLocation = () => {
@@ -65,19 +84,19 @@ function LocationEditingPanel({ location }) {
 				<div id="locationForm">
 				<div className="formGroup">
 					<label>Name:</label>
-					<input type="text" name="name" className={formData.name.length > 0 ? "" : "invalid"} placeholder="Unnamed Location" value={formData.name} onChange={changeFormData} />
+					<input type="text" name="name" className={formData.name.length > 0 ? "" : "invalid"} placeholder="Unnamed Location" disabled={typeof formData.houseId === "string"} value={formData.name} onChange={changeFormData} />
 				</div>
 				<div className="formGroup">
-					<input type="checkbox" ref={publicCheckRef} name="public" checked={!!formData.public} onChange={changeFormData} />
+					<input type="checkbox" ref={publicCheckRef} name="public" disabled={typeof formData.houseId === "string"} checked={!!formData.public} onChange={changeFormData} />
 					<label onClick={() => { publicCheckRef.current.click(); }}>Public</label>
 				</div>
 				<HouseSelect value={formData.houseId} onChange={changeFormData} />
 				<div className="formGroup">
 					<label>Owner:</label>
-					<input type="text" name="owner" className={validateAccountName(formData.owner) ? "" : "invalid"} value={formData.owner} onChange={changeFormData} />
+					<input type="text" name="owner" className={(typeof formData.houseId === "string") || (validateAccountName(formData.owner)) ? "" : "invalid"} disabled={typeof formData.houseId === "string"} value={formData.owner || ""} onChange={changeFormData} />
 				</div>
 				<div className="textBox">
-					<textarea name="description" value={formData.description} placeholder="Description (optional)" onChange={changeFormData}></textarea>
+					<textarea name="description" disabled={typeof formData.houseId === "string"} value={formData.description} placeholder="Description (optional)" onChange={changeFormData}></textarea>
 				</div>
 			</div>
 			<div className="formGroup deleteLoc">

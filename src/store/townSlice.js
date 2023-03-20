@@ -3,6 +3,8 @@ import { listener } from "./listener";
 import townFuncs from "../db/town";
 import { modalActions, modalKey } from "./modalSlice";
 
+import { exportAddonData } from "../util/export";
+
 const baseTown = {
 	locations: [],
 };
@@ -19,11 +21,11 @@ const basePortal = {
 	x: 0,
 	y: 0,
 	z: 0,
-	mapX: 0,
-	mapY: 0,
+	cx: 0,
+	cy: 0,
 }
 
-// Firbase's Realtime Database does not store empty arrays or null values.  Make sure loaded data has the required structure.
+// Firebase's Realtime Database does not store empty arrays or null values.  Make sure loaded data has the required structure.
 function setTownData(data) {
 	const result = { ...baseTown, ...data };
 
@@ -53,7 +55,11 @@ export const townSlice = createSlice({
 			state.release = undefined;
 		},
 		loadReleaseDataSuccess(state, action) {
-			state.release = setTownData(action.payload);
+			state.release = { ...action.payload};
+			
+			Object.keys(state.release).forEach((town) => {
+				state.release[town] = setTownData(state.release[town]);
+			});
 		},
 		loadTownData(state) {
 			state.backup = undefined;
@@ -153,6 +159,9 @@ export const townSlice = createSlice({
 				}
 			}
 		},
+		exportAddonData(state, action) {
+			exportAddonData(action.payload);
+		}
 	}
 });
 

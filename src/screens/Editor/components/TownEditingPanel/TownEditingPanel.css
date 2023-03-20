@@ -21,7 +21,7 @@
 	min-width: 200px;
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1260px) {
 	#townEditor {
 		flex-wrap: wrap;
 	}
