@@ -9,3 +9,8 @@
 #houseSelect select {
 	max-width: 200px;
 }
+
+#houseSelect .warning {
+	border: solid 1px var(--error-color);
+	cursor: pointer;
+}

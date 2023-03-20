@@ -46,8 +46,24 @@ function HouseSelect({value, onChange }) {
 		dispatch(modalActions.showModal({ key: modalKey.houseStyle }));
 	}
 
+	const showWarningModal = () => {
+		console.log("Hi!");
+		dispatch(modalActions.showModal({
+			key: modalKey.generic,
+			data: {
+				title: "Help Needed!",
+				text: [
+					"This house is missing some information needed to be fully compatible with the addon!  If you own this house, please visit it and Ctrl-click the addon's house icon.  Choose \"Generate Portal text\" and collect the Map line that looks like this:",
+					"CODE:Map: [49] = {id = 49, map = \"glenumbra_base\"},",
+					"Send it to Bobby on Discord, please!",
+				],
+				width: "500px",
+			},
+		}))
+	}
+
 	return <div id="houseSelect" className="formGroup">
-		{curZone?.icon ? <img alt={"House Icon"} title={houseHint} src={curZone.icon} /> : <img />}
+		{curZone?.icon ? <img className={curZone?.map ? "" : "warning"} alt={"House Icon"} title={houseHint} src={curZone.icon} onClick={curZone?.map ? null : showWarningModal} /> : <img />}
 		<select name="houseId" value={value} onChange={onChange}>
 			{zoneList.map((zone) => {
 				return <option key={zone.id || zone.name} value={zone.id || zone.name}>{zone.name}</option>
