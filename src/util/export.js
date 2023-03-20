@@ -219,8 +219,8 @@ export function exportAddonData(data) {
 	});
 	result += "}\n";
 
-	console.log(result);
-	return;
+	// console.log(result);
+	// return;
 
 	const file = URL.createObjectURL(new Blob([ result ], { type: "text/plain" }));
 
