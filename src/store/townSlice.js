@@ -58,7 +58,9 @@ export const townSlice = createSlice({
 			state.release = { ...action.payload};
 			
 			Object.keys(state.release).forEach((town) => {
-				state.release[town] = setTownData(state.release[town]);
+				if (state.release[town].name) {
+					state.release[town] = setTownData(state.release[town]);
+				}
 			});
 		},
 		loadTownData(state) {
@@ -70,8 +72,12 @@ export const townSlice = createSlice({
 			state.backup = setTownData(action.payload);
 			state.working = JSON.parse(JSON.stringify(state.backup)); // Deep copy.
 		},
-		saveReleaseData(state) {
+		saveReleaseData(state, action) {
 			state.busy = true;
+		},
+		saveReleaseDataSuccess(state, action) {
+			state.release = action.payload;
+			state.busy = false;
 		},
 		saveTownData(state) {
 			state.working = { ...state.working, modified: Date.now() };
@@ -212,8 +218,8 @@ listener.startListening({
 listener.startListening({
 	actionCreator: townActions.saveReleaseData,
 	effect: async (action, listenerApi) => {
-		townFuncs.saveReleaseData(listenerApi.getState().town.release).then(() => {
-			listenerApi.dispatch(townActions.setBusy(false));
+		townFuncs.saveReleaseData(action.payload).then(() => {
+			listenerApi.dispatch(townActions.saveReleaseDataSuccess(action.payload));
 			listenerApi.dispatch(modalActions.showModal({
 				key: modalKey.generic,
 				data: {

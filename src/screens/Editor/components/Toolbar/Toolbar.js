@@ -23,6 +23,7 @@ function Toolbar() {
 
 	const doDownload = () => {
 		const exportData = { ...releaseInfo };
+		delete exportData.timestamp; // Don't let the export spin through this.
 		exportData[townKey] = { ...workingTown };
 
 		dispatch(modalActions.showModal({
@@ -62,11 +63,29 @@ function Toolbar() {
 		}));
 	}
 
+	const doMerge = () => {
+		const mergedData = { ...releaseInfo };
+		mergedData[townKey] = { ...workingTown };
+		mergedData.modified = Date.now();
+
+		dispatch(modalActions.showModal({
+			key: modalKey.generic,
+			data: {
+				title: "Merge for Release?",
+				text: [
+					"This will save this town's changes to the release branch.",
+					"The Download button can then be used to pull the town data."
+				],
+				action: townActions.saveReleaseData(mergedData),
+			}
+		}));
+	}
+
 	return <footer id="toolbar">
 		<button title="Download location data file for testing your changes" disabled={!workingTown.locations.length} onClick={doDownload}>Download</button>
 		<button title="Save changes" disabled={!changed} onClick={doSave}>Save</button>
 		<button title="Discard changes" disabled={!changed} onClick={doRevert}>Revert</button>
-		{user.permissions.indexOf("developer") > -1 && <button className="devButton" title="Prepare release" disabled={!canMerge}>Merge</button>}
+		{user.permissions.indexOf("developer") > -1 && <button className="devButton" title="Prepare release" disabled={!canMerge} onClick={doMerge}>Merge</button>}
 		{/* {user.permissions.indexOf("admin") > -1 && <button className="adminButton">Add User</button>} */}
 	</footer>;
 }

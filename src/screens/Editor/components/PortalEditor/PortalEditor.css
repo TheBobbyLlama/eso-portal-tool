@@ -109,11 +109,12 @@
 
 #portalPanel #portalForm .textBox {
 	flex-grow: 1;
+	width: 100%;
 }
 
 #portalPanel #portalForm textarea {
 	border-radius: 4px;
-	height: 4.5em;
+	height: 9em;
 	resize: none;
 	width: 100%;
 }

@@ -31,11 +31,9 @@ function loadTownData(townName) {
 	})
 }
 
-function setReleaseData(data) {
+function saveReleaseData(data) {
 	return new Promise((res, rej) => {
 	const dataRef = ref(db, "release");
-
-	data.timestamp = Date.now();
 
 	set(dataRef, data).then(res).catch(rej);
 });
@@ -52,7 +50,7 @@ function saveTownData(data) {
 const townFuncs = {
 	loadReleaseData,
 	loadTownData,
-	setReleaseData,
+	saveReleaseData,
 	saveTownData,
 };
 

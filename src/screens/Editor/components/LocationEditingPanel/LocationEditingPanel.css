@@ -39,6 +39,7 @@
 
 #locationForm .textBox {
 	flex-grow: 1;
+	width: 100%;
 }
 
 #locationForm textarea {

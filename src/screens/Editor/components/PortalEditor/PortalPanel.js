@@ -73,7 +73,7 @@ function PortalPanel({ location, portal }) {
 
 	const pastePortalData = () => {
 		navigator.clipboard.readText().then((text) => {
-			const result = text.match(/Portal: {location = -1, destinations = {##}, x = (-?[0-9]+), y = (-?[0-9]+), z = (-?[0-9]+), cx = (-?[0-9]+\.[0-9]+), cy = (-?[0-9]+\.[0-9]+)}/);
+			const result = text.match(/Portal: {location = -?[0-9]+, destinations = {##}, x = (-?[0-9]+), y = (-?[0-9]+), z = (-?[0-9]+), cx = (-?[0-9]+\.[0-9]+), cy = (-?[0-9]+\.[0-9]+)}/);
 
 			if (result?.length === 6) {
 				const newData = { ...formData };
