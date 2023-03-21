@@ -14,7 +14,6 @@ function buildKey() {
 	return result;
 }
 
-// TODO: Replace the following with your app's Firebase project configuration
 const firebaseConfig = {
 	apiKey: buildKey(),
 	authDomain: "rp-town-portal.firebaseapp.com",

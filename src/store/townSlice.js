@@ -106,7 +106,12 @@ export const townSlice = createSlice({
 			state.working = { ...state.working };
 			state.working.locations = state.working.locations.filter(item => item.id !== action.payload.locationId);
 
-			// TODO - Remove portal destinations that point to the deleted location!
+			// Clean up portal destinations.
+			state.working.locations.forEach((location) => {
+				location.portals.forEach((portal) => {
+					portal.destinations = portal.destinations.filter((dest) => dest !== action.payload.locationId);
+				});
+			});
 
 			state.changed = true;
 		},
