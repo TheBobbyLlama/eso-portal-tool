@@ -20,7 +20,6 @@ function PortalPanel({ location, portal }) {
 	const [ formData, setFormData ] = useState(getDefaultFormData(portal));
 	const townData = useSelector(townSelectors.working);
 	const destRef = useRef(null);
-	const multiRef = useRef(null);
 	const dispatch = useDispatch();
 
 	useEffect(() => {
