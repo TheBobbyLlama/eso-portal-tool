@@ -24,7 +24,6 @@ const portalMap = {
 		"radius",
 		"nameOverride",
 		"portalDescription",
-		"showMulti",
 	]
 }
 
@@ -208,7 +207,6 @@ export function exportAddonData(data) {
 				if ((portal.radius) && (portal.radius !== 10)) { result += `, radius = ${portal.radius}`; }
 				if (portal.height) { result += `, height = ${portal.height}`; }
 				if (portal.nameOverride) { result += `, nameOverride = "${portal.nameOverride}"`; }
-				if (portal.showMulti) { result += `, showMulti = ${portal.showMulti}`; }
 				if (portal.portalDescription) { result += `, portalDescription = "${printDescription(portal.portalDescription)}"`; }
 
 				result += "},\n";

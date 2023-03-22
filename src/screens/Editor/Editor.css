@@ -4,9 +4,9 @@
 }
 
 #editor h2 {
-	align-items: center;
 	display: flex;
-	flex-direction: column;
+	justify-content: center;
+	gap: 10px;
 	margin-bottom: 16px;
 }
 

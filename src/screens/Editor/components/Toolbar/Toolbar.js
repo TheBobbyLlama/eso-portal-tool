@@ -23,7 +23,7 @@ function Toolbar() {
 
 	const doDownload = () => {
 		const exportData = { ...releaseInfo };
-		delete exportData.timestamp; // Don't let the export spin through this.
+		delete exportData.modified; // Don't let the export spin through this.
 		exportData[townKey] = { ...workingTown };
 
 		dispatch(modalActions.showModal({

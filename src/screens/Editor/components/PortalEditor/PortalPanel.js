@@ -10,7 +10,6 @@ function getDefaultFormData(portal) {
 			...portal,
 			nameOverride: portal.nameOverride || "",
 			portalDescription: portal.portalDescription || "",
-			showMulti: portal.showMulti || false,
 		};
 	} else {
 		return { destinations: [] };
@@ -180,10 +179,6 @@ function PortalPanel({ location, portal }) {
 				<div className="formGroup">
 					<label>Name:</label>
 					<input type="text" name="nameOverride" placeholder="Optional" value={formData.nameOverride} onChange={changePortalInfo} />
-				</div>
-				<div className="formGroup">
-					<input ref={multiRef} type="checkbox" name="showMulti" checked={formData.destinations.length > 1 || formData.showMulti} disabled={formData.destinations.length > 1} onChange={changePortalInfo} />
-					<label onClick={() => { multiRef.current.click(); }}>Show Destination List</label>
 				</div>
 				<div className="textBox">
 					<textarea name="portalDescription" value={formData.portalDescription} placeholder="Description (optional)" onChange={changePortalInfo}></textarea>

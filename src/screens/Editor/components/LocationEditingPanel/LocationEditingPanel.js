@@ -86,7 +86,7 @@ function LocationEditingPanel({ location }) {
 					<label>Name:</label>
 					<input type="text" name="name" className={formData.name.length > 0 ? "" : "invalid"} placeholder="Unnamed Location" disabled={typeof formData.houseId === "string"} value={formData.name} onChange={changeFormData} />
 				</div>
-				<div className="formGroup">
+				<div className="formGroup" title="Public locations can be traveled to directly by clicking the addon icon.">
 					<input type="checkbox" ref={publicCheckRef} name="public" disabled={typeof formData.houseId === "string"} checked={!!formData.public} onChange={changeFormData} />
 					<label onClick={() => { publicCheckRef.current.click(); }}>Public</label>
 				</div>
