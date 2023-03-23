@@ -24,6 +24,7 @@ export const zoneData = [
 	{
 		id: 4,
 		name: "Barbed Hook Private Room",
+		map: "auridon_base",
 		size: "Apartment",
 		style: "Altmer",
 		icon: "https://images.uesp.net/8/88/ON-icon-house-Barbed_Hook_Private_Room.png",
@@ -31,6 +32,7 @@ export const zoneData = [
 	{
 		id: 5,
 		name: "Sisters of the Sands Apartment",
+		map: "alikr_base",
 		size: "Apartment",
 		style: "Redguard",
 		icon: "https://images.uesp.net/d/d6/ON-icon-house-Sisters_of_the_Sands_Apartment.png",
@@ -38,6 +40,7 @@ export const zoneData = [
 	{
 		id: 6,
 		name: "Flaming Nix Deluxe Garret",
+		map: "mournhold_base",
 		size: "Apartment",
 		style: "Dunmer",
 		icon: "https://images.uesp.net/a/a6/ON-icon-house-Flaming_Nix_Deluxe_Garret.png",
@@ -45,6 +48,7 @@ export const zoneData = [
 	{
 		id: 7,
 		name: "Black Vine Villa",
+		map: "malabaltor_base",
 		size: "Small House",
 		style: "Altmer",
 		icon: "https://images.uesp.net/c/c0/ON-icon-house-Black_Vine_Villa.png",
@@ -52,6 +56,7 @@ export const zoneData = [
 	{
 		id: 8,
 		name: "Cliffshade",
+		map: "greenshade_base",
 		size: "Medium House",
 		style: "Altmer",
 		icon: "https://images.uesp.net/b/b4/ON-icon-house-Cliffshade.png",
@@ -59,13 +64,15 @@ export const zoneData = [
 	{
 		id: 9,
 		name: "Mathiisen Manor",
+		map: "auridon_base",
 		size: "Large House",
-		style: "Dunmer",
+		style: "Altmer",
 		icon: "https://images.uesp.net/e/e3/ON-icon-house-Mathiisen_Manor.png",
 	},
 	{
 		id: 10,
 		name: "Humblemud",
+		map: "balfoyen_base",
 		size: "Small House",
 		style: "Argonian",
 		icon: "https://images.uesp.net/1/10/ON-icon-house-Humblemud.png",
@@ -73,6 +80,7 @@ export const zoneData = [
 	{
 		id: 11,
 		name: "The Ample Domicile",
+		map: "shadowfen_base",
 		size: "Medium House",
 		style: "Argonian",
 		icon: "https://images.uesp.net/9/9c/ON-icon-house-The_Ample_Domicile.png",
@@ -80,6 +88,7 @@ export const zoneData = [
 	{
 		id: 12,
 		name: "Stay-Moist Mansion",
+		map: "shadowfen_base",
 		size: "Large House",
 		style: "Argonian",
 		icon: "https://images.uesp.net/e/e2/ON-icon-house-Stay-Moist_Mansion.png",
@@ -87,6 +96,7 @@ export const zoneData = [
 	{
 		id: 13,
 		name: "Snugpod",
+		map: "eldenrootgroundfloor_base",
 		size: "Small House",
 		style: "Bosmer",
 		icon: "https://images.uesp.net/9/9f/ON-icon-house-Snugpod.png",
@@ -94,6 +104,7 @@ export const zoneData = [
 	{
 		id: 14,
 		name: "Bouldertree Refuge",
+		map: "greenshade_base",
 		size: "Medium House",
 		style: "Bosmer",
 		icon: "https://images.uesp.net/7/7e/ON-icon-house-Bouldertree_Refuge.png",
@@ -101,6 +112,7 @@ export const zoneData = [
 	{
 		id: 15,
 		name: "The Gorinir Estate",
+		map: "grahtwood_base",
 		size: "Large House",
 		style: "Bosmer",
 		icon: "https://images.uesp.net/4/4f/ON-icon-house-The_Gorinir_Estate.png",
@@ -132,6 +144,7 @@ export const zoneData = [
 	{
 		id: 19,
 		name: "Kragenhome",
+		map: "kragenmoor_base",
 		size: "Small House",
 		style: "Dunmer",
 		icon: "https://images.uesp.net/d/d9/ON-icon-house-Kragenhome.png",
@@ -139,6 +152,7 @@ export const zoneData = [
 	{
 		id: 20,
 		name: "Velothi Reverie",
+		map: "deshaan_base",
 		size: "Medium House",
 		style: "Dunmer",
 		icon: "https://images.uesp.net/6/6c/ON-icon-house-Velothi_Reverie.png",
@@ -146,6 +160,7 @@ export const zoneData = [
 	{
 		id: 21,
 		name: "Quondam Indorilia",
+		map: "deshaan_base",
 		size: "Large House",
 		style: "Dunmer",
 		icon: "https://images.uesp.net/9/9f/ON-icon-house-Quondam_Indorilia.png",
@@ -153,6 +168,7 @@ export const zoneData = [
 	{
 		id: 22,
 		name: "Moonmirth House",
+		map: "khenarthisroost_base",
 		size: "Small House",
 		style: "Khajiit",
 		icon: "https://images.uesp.net/8/80/ON-icon-house-Moonmirth_House.png",
@@ -160,6 +176,7 @@ export const zoneData = [
 	{
 		id: 23,
 		name: "Sleek Creek House",
+		map: "reapersmarch_base",
 		size: "Medium House",
 		style: "Khajiit",
 		icon: "https://images.uesp.net/0/0c/ON-icon-house-Sleek_Creek_House.png",
@@ -167,6 +184,7 @@ export const zoneData = [
 	{
 		id: 24,
 		name: "Dawnshadow",
+		map: "reapersmarch_base",
 		size: "Large House",
 		style: "Khajiit",
 		icon: "https://images.uesp.net/d/df/ON-icon-house-Dawnshadow.png",
@@ -174,6 +192,7 @@ export const zoneData = [
 	{
 		id: 25,
 		name: "Cyrodiilic Jungle House",
+		map: "baandaritradingpost_base",
 		size: "Small House",
 		style: "Imperial",
 		icon: "https://images.uesp.net/e/ec/ON-icon-house-Cyrodilic_Jungle_House.png",
@@ -181,6 +200,7 @@ export const zoneData = [
 	{
 		id: 26,
 		name: "Domus Phrasticus",
+		map: "craglorn_base",
 		size: "Medium House",
 		style: "Imperial",
 		icon: "https://images.uesp.net/5/5f/ON-icon-house-Domus_Phrasticus.png",
@@ -188,6 +208,7 @@ export const zoneData = [
 	{
 		id: 27,
 		name: "Strident Springs Demesne",
+		map: "reapersmarch_base",
 		size: "Large House",
 		style: "Imperial",
 		icon: "https://images.uesp.net/a/a3/ON-icon-house-Strident_Springs_Demesne.png",
@@ -219,6 +240,7 @@ export const zoneData = [
 	{
 		id: 31,
 		name: "Hammerdeath Bungalow",
+		map: "stormhaven_base",
 		size: "Small House",
 		style: "Orc",
 		icon: "https://images.uesp.net/9/9d/ON-icon-house-Hammerdeath_Bungalow.png",
@@ -226,6 +248,7 @@ export const zoneData = [
 	{
 		id: 32,
 		name: "Mournoth Keep",
+		map: "bangkorai_base",
 		size: "Medium House",
 		style: "Orc",
 		icon: "https://images.uesp.net/c/c8/ON-icon-house-Mournoth_Keep.png",
@@ -233,6 +256,7 @@ export const zoneData = [
 	{
 		id: 33,
 		name: "Forsaken Stronghold",
+		map: "bangkorai_base",
 		size: "Large House",
 		style: "Orc",
 		icon: "https://images.uesp.net/8/88/ON-icon-house-Forsaken_Stronghold.png",
@@ -240,6 +264,7 @@ export const zoneData = [
 	{
 		id: 34,
 		name: "Twin Arches",
+		map: "bangkorai_base",
 		size: "Small House",
 		style: "Redguard",
 		icon: "https://images.uesp.net/b/b4/ON-icon-house-Twin_Arches.png",
@@ -247,6 +272,7 @@ export const zoneData = [
 	{
 		id: 35,
 		name: "House of the Silent Magnifico",
+		map: "sentinel_base",
 		size: "Medium House",
 		style: "Redguard",
 		icon: "https://images.uesp.net/6/6a/ON-icon-house-House_of_the_Silent_Magnifico.png",
@@ -254,6 +280,7 @@ export const zoneData = [
 	{
 		id: 36,
 		name: "Hunding's Palatial Hall",
+		map: "strosmkai_base",
 		size: "Large House",
 		style: "Redguard",
 		icon: "https://images.uesp.net/f/fa/ON-icon-house-Hunding%27s_Palatial_Hall.png",
@@ -261,6 +288,7 @@ export const zoneData = [
 	{
 		id: 37,
 		name: "Serenity Falls Estate",
+		map: "reapersmarch_base",
 		size: "Manor",
 		style: "Khajiit",
 		icon: "https://images.uesp.net/1/19/ON-icon-house-Serenity_Falls_Estate.png",
@@ -268,6 +296,7 @@ export const zoneData = [
 	{
 		id: 38,
 		name: "Daggerfall Overlook",
+		map: "glenumbra_base",
 		size: "Manor",
 		style: "Breton",
 		icon: "https://images.uesp.net/9/9a/ON-icon-house-Daggerfall_Overlook.png",
@@ -275,6 +304,7 @@ export const zoneData = [
 	{
 		id: 39,
 		name: "Ebonheart Chateau",
+		map: "stonefalls_base",
 		size: "Manor",
 		style: "Dunmer",
 		icon: "https://images.uesp.net/3/37/ON-icon-house-Ebonheart_Chateau.png",
@@ -290,6 +320,7 @@ export const zoneData = [
 	{
 		id: 41,
 		name: "Earthtear Cavern",
+		map: "earthtearcavern_base",
 		size: "Manor",
 		style: "Redguard",
 		icon: "https://images.uesp.net/2/2f/ON-icon-house-Earthtear_Cavern.png",
@@ -304,6 +335,7 @@ export const zoneData = [
 	{
 		id: 43,
 		name: "Amaya Lake Lodge",
+		map: "vvardenfell_base",
 		size: "Large House",
 		style: "Dunmer",
 		icon: "https://images.uesp.net/d/dd/ON-icon-house-Amaya_Lake_Lodge.png",
@@ -311,6 +343,7 @@ export const zoneData = [
 	{
 		id: 44,
 		name: "Ald Velothi Harbor House",
+		map: "vvardenfell_base",
 		size: "Medium House",
 		style: "Dunmer",
 		icon: "https://images.uesp.net/4/49/ON-icon-house-Ald_Velothi_Harbor_House.png",
@@ -363,6 +396,7 @@ export const zoneData = [
 	{
 		id: 55,
 		name: "The Observatory Prior",
+		map: "clockwork_base",
 		size: "Manor",
 		style: "Other",
 		icon: "https://images.uesp.net/a/ab/ON-icon-house-The_Orbservatory_Prior.png",
@@ -391,6 +425,7 @@ export const zoneData = [
 	{
 		id: 59,
 		name: "Alinor Crest Townhouse",
+		map: "alinor_base",
 		size: "Large House",
 		style: "Altmer",
 		icon: "https://images.uesp.net/c/c3/ON-icon-house-Alinor_Crest_Townhouse.png",
@@ -398,6 +433,7 @@ export const zoneData = [
 	{
 		id: 60,
 		name: "Colossal Aldmeri Grotto",
+		map: "colossalaldmerigrotto_base",
 		size: "Manor",
 		style: "Altmer",
 		icon: "https://images.uesp.net/8/86/ON-icon-house-Colossal_Aldmeri_Grotto.png",
@@ -462,6 +498,7 @@ export const zoneData = [
 	{
 		id: 70,
 		name: "Hall of the Lunar Champion",
+		map: "rimmen_base",
 		size: "Manor",
 		style: "Khajiit",
 		icon: "https://images.uesp.net/d/d7/ON-icon-house-Hall_of_the_Lunar_Champion.png",
@@ -484,6 +521,7 @@ export const zoneData = [
 	{
 		id: 73,
 		name: "Lucky Cat Landing",
+		map: "senchal_base",
 		size: "Medium House",
 		style: "Khajiit",
 		icon: "https://images.uesp.net/d/de/ON-icon-house-Lucky_Cat_Landing.png",
@@ -498,7 +536,7 @@ export const zoneData = [
 	{
 		id: 75,
 		name: "Forgemaster's Falls",
-		map: "forgemastersfalls_base",
+		map: "forgemasterfalls_base",
 		size: "Large House",
 		style: "Orc",
 		icon: "https://images.uesp.net/6/6a/ON-icon-house-Forgemaster_Falls.png",
@@ -520,6 +558,7 @@ export const zoneData = [
 	{
 		id: 78,
 		name: "Proudspire Manor",
+		map: "solitudecity_base",
 		size: "Large House",
 		style: "Nord",
 		icon: "https://images.uesp.net/3/3e/ON-icon-house-Proudspire_Manor.png",
@@ -527,16 +566,20 @@ export const zoneData = [
 	{
 		id: 79,
 		name: "Bastion Sanguinaris",
+		map: "bastionsanguinaris_ext01_base",
 		size: "Manor",
 		style: "Other",
 		icon: "https://images.uesp.net/b/ba/ON-icon-house-Bastion_Sanguinaris.png",
+		TODO: "Tons of subzones!!!",
 	},
 	{
 		id: 80,
 		name: "Stillwaters Retreat",
+		map: "stillwatersretreatext_base",
 		size: "Manor",
 		style: "Other",
 		icon: "https://images.uesp.net/0/03/ON-icon-house-Stillwaters_Retreat.png",
+		TODO: "Also has interior stillwatersretreatint_base map!!!",
 	},
 	{
 		id: 81,
@@ -549,6 +592,7 @@ export const zoneData = [
 	{
 		id: 82,
 		name: "Shalidor's Shrouded Realm",
+		map: "shroudedrealmext_base",
 		size: "Manor",
 		style: "Nord",
 		icon: "https://images.uesp.net/1/13/ON-icon-house-Shalidor%27s_Shrouded_Realm.png",
@@ -570,9 +614,11 @@ export const zoneData = [
 	{
 		id: 86,
 		name: "Varlaisvea Ayleid Ruins",
+		map: "varlaisveaayleidext_base",
 		size: "Manor",
 		style: "Other",
 		icon: "https://images.uesp.net/0/0b/ON-icon-house-Varlaisvea_Ayleid_Ruins.png",
+		TODO: "Also has interior varlaisveaayleidint_base map?",
 	},
 	{
 		id: 87,
@@ -584,6 +630,7 @@ export const zoneData = [
 	{
 		id: 88,
 		name: "Water's Edge",
+		map:  "u30_leyawiincity_base",
 		size: "Large House",
 		style: "Imperial",
 		icon: "https://images.uesp.net/4/45/ON-icon-house-Water%27s_Edge.png",
