@@ -1,7 +1,8 @@
 export const zoneData = [
 	{
 		id: 1,
-		name: "Mara's Kiss Inn Room",
+		name: "Mara's Kiss Public House",
+		map: "vulkhelguard_base",
 		size: "Inn Room",
 		style: "Altmer",
 		icon: "https://images.uesp.net/2/2f/ON-icon-house-Mara%27s_Kiss_Inn_Room.png",
@@ -17,6 +18,7 @@ export const zoneData = [
 	{
 		id: 3,
 		name: "The Ebony Flask Inn Room",
+		map: "stonefalls_base",
 		size: "Inn Room",
 		style: "Dunmer",
 		icon: "https://images.uesp.net/9/9d/ON-icon-house-The_Ebony_Flask_Inn_Room.png",
@@ -328,6 +330,7 @@ export const zoneData = [
 	{
 		id: 42,
 		name: "Saint Delyn Penthouse",
+		map: "vvardenfell_base",
 		size: "Inn Room",
 		style: "Dunmer",
 		icon: "https://images.uesp.net/e/e9/ON-icon-house-Saint_Delyn_Penthouse.png",
@@ -351,6 +354,7 @@ export const zoneData = [
 	{
 		id: 45,
 		name: "Tel Galen",
+		map: "telgalencourtyard_base",
 		size: "Manor",
 		style: "Dunmer",
 		icon: "https://images.uesp.net/3/3a/ON-icon-house-Tel_Galen.png",
@@ -358,6 +362,7 @@ export const zoneData = [
 	{
 		id: 46,
 		name: "Linchal Grand Manor",
+		map: "goldcoast_base",
 		size: "Manor",
 		style: "Imperial",
 		icon: "https://images.uesp.net/8/8d/ON-icon-house-Linchal_Grand_Manor.png",
@@ -404,6 +409,7 @@ export const zoneData = [
 	{
 		id: 56,
 		name: "The Erstwhile Sanctuary",
+		map: "erstwhilesanctuary_base",
 		size: "Manor",
 		style: "Other",
 		icon: "https://images.uesp.net/9/9f/ON-icon-house-The_Erstwhile_Sanctuary.png",
@@ -418,6 +424,7 @@ export const zoneData = [
 	{
 		id: 58,
 		name: "Golden Gryphon Garret",
+		map: "alinor_base",
 		size: "Inn Room",
 		style: "Altmer",
 		icon: "https://images.uesp.net/1/10/ON-icon-house-Golden_Gryphon_Garret.png",
@@ -441,6 +448,7 @@ export const zoneData = [
 	{
 		id: 61,
 		name: "Hunter's Glade",
+		map: "huntersglade_int_base",
 		size: "Manor",
 		style: "Other",
 		icon: "https://images.uesp.net/9/9a/ON-icon-house-Hunter%27s_Glade.png",
@@ -448,6 +456,7 @@ export const zoneData = [
 	{
 		id: 62,
 		name: "Grand Psijic Villa",
+		map: "psijicmanor_ext1_base",
 		size: "Manor",
 		style: "Altmer",
 		icon: "https://images.uesp.net/1/10/ON-icon-house-Grand_Psijic_Villa.png",
@@ -463,6 +472,7 @@ export const zoneData = [
 	{
 		id: 64,
 		name: "Lakemire Xanmeer Manor",
+		map: "lakemirexanmer_base",
 		size: "Manor",
 		style: "Argonian",
 		icon: "https://images.uesp.net/b/be/ON-icon-house-Lakemire_Xanmeer_Manor.png",
@@ -470,6 +480,7 @@ export const zoneData = [
 	{
 		id: 65,
 		name: "Frostvault Chasm",
+		map: "frostvaultchasm_base",
 		size: "Medium House",
 		style: "Other",
 		icon: "https://images.uesp.net/4/43/ON-icon-house-Frostvault_Chasm.png",
@@ -477,6 +488,7 @@ export const zoneData = [
 	{
 		id: 66,
 		name: "Elinhir Private Arena",
+		map: "elinhirprivatearena_base",
 		size: "Manor",
 		style: "Imperial",
 		icon: "https://images.uesp.net/5/5b/ON-icon-house-Elinhir_Private_Arena.png",
@@ -484,6 +496,7 @@ export const zoneData = [
 	{
 		id: 68,
 		name: "Sugar Bowl Suite",
+		map: "rimmen_base",
 		size: "Inn Room",
 		style: "Khajiit",
 		icon: "https://images.uesp.net/7/74/ON-icon-house-Sugar_Bowl_Suite.png",
@@ -529,6 +542,7 @@ export const zoneData = [
 	{
 		id: 74,
 		name: "Potentate's Retreat",
+		map: "pellitinemanorint.base",
 		size: "Manor",
 		style: "Khajiit",
 		icon: "https://images.uesp.net/2/2a/ON-icon-house-Potentate%27s_Retreat.png",
@@ -551,6 +565,7 @@ export const zoneData = [
 	{
 		id: 77,
 		name: "Snowmelt Suite",
+		map: "solitudecity_base",
 		size: "Inn Room",
 		style: "Nord",
 		icon: "https://images.uesp.net/3/35/ON-icon-house-Snowmelt_Suite.png",
@@ -570,7 +585,6 @@ export const zoneData = [
 		size: "Manor",
 		style: "Other",
 		icon: "https://images.uesp.net/b/ba/ON-icon-house-Bastion_Sanguinaris.png",
-		TODO: "Tons of subzones!!!",
 	},
 	{
 		id: 80,
@@ -579,7 +593,6 @@ export const zoneData = [
 		size: "Manor",
 		style: "Other",
 		icon: "https://images.uesp.net/0/03/ON-icon-house-Stillwaters_Retreat.png",
-		TODO: "Also has interior stillwatersretreatint_base map!!!",
 	},
 	{
 		id: 81,
@@ -600,6 +613,7 @@ export const zoneData = [
 	{
 		id: 83,
 		name: "Stone Eagle Aerie",
+		map: "u28_markarthmanor_base",
 		size: "Manor",
 		style: "Other",
 		icon: "https://images.uesp.net/c/c9/ON-icon-house-Stone_Eagle_Aerie.png",
@@ -607,6 +621,7 @@ export const zoneData = [
 	{
 		id: 85,
 		name: "Kushalit Sanctuary",
+		map: "kushalitsanctuaryext_base",
 		size: "Manor",
 		style: "Other",
 		icon: "https://images.uesp.net/1/1b/ON-icon-house-Kushalit_Sanctuary.png",
@@ -618,11 +633,11 @@ export const zoneData = [
 		size: "Manor",
 		style: "Other",
 		icon: "https://images.uesp.net/0/0b/ON-icon-house-Varlaisvea_Ayleid_Ruins.png",
-		TODO: "Also has interior varlaisveaayleidint_base map?",
 	},
 	{
 		id: 87,
 		name: "Pilgrim's Rest",
+		map: "u30_leyawiincity_base",
 		size: "Inn Room",
 		style: "Imperial",
 		icon: "https://images.uesp.net/a/a4/ON-icon-house-Pilgrim%27s_Rest.png",
@@ -638,6 +653,7 @@ export const zoneData = [
 	{
 		id: 89,
 		name: "Pantherfang Chapel",
+		map: "u30_pantherfang_int1_base",
 		size: "Manor",
 		style: "Imperial",
 		icon: "https://images.uesp.net/5/5b/ON-icon-house-Pantherfang_Chapel.png",
@@ -645,6 +661,7 @@ export const zoneData = [
 	{
 		id: 90,
 		name: "Doomchar Plateau",
+		map: "u31_housing_doomchar",
 		size: "Manor",
 		style: "Other",
 		icon: "https://images.uesp.net/1/1b/ON-icon-house-Doomchar_Plateau.png",
@@ -652,6 +669,7 @@ export const zoneData = [
 	{
 		id: 91,
 		name: "Sweetwater Cascades",
+		map: "u31_housing_sweetwater",
 		size: "Manor",
 		style: "Imperial",
 		icon: "https://images.uesp.net/a/a2/ON-icon-house-Sweetwater_Cascades.png",
@@ -659,6 +677,7 @@ export const zoneData = [
 	{
 		id: 92,
 		name: "Ossa Accentium",
+		map: "u32_fargrave_base",
 		size: "Manor",
 		style: "Other",
 		icon: "https://images.uesp.net/b/b2/ON-icon-house-Ossa_Accentium.png",
@@ -680,6 +699,7 @@ export const zoneData = [
 	{
 		id: 95,
 		name: "Ancient Anchor Berth",
+		map: "u34_gonfalonbaycity_base",
 		size: "Inn Room",
 		style: "Breton",
 		icon: "https://images.uesp.net/6/63/ON-icon-house-Ancient_Anchor_Berth.png",
