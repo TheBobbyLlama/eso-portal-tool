@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/eso-portal-tool/static/css/main.d3499c2c.css",
-    "main.js": "/eso-portal-tool/static/js/main.a83f1e0d.js",
+    "main.css": "/eso-portal-tool/static/css/main.24a49963.css",
+    "main.js": "/eso-portal-tool/static/js/main.9d682866.js",
     "static/js/787.f0c240ff.chunk.js": "/eso-portal-tool/static/js/787.f0c240ff.chunk.js",
     "static/media/spinner.gif": "/eso-portal-tool/static/media/spinner.7b4da7a15287c40931f1.gif",
     "static/media/RPTP.png": "/eso-portal-tool/static/media/RPTP.1da78abbf8044ed6a9ea.png",
     "index.html": "/eso-portal-tool/index.html",
-    "main.d3499c2c.css.map": "/eso-portal-tool/static/css/main.d3499c2c.css.map",
-    "main.a83f1e0d.js.map": "/eso-portal-tool/static/js/main.a83f1e0d.js.map",
+    "main.24a49963.css.map": "/eso-portal-tool/static/css/main.24a49963.css.map",
+    "main.9d682866.js.map": "/eso-portal-tool/static/js/main.9d682866.js.map",
     "787.f0c240ff.chunk.js.map": "/eso-portal-tool/static/js/787.f0c240ff.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d3499c2c.css",
-    "static/js/main.a83f1e0d.js"
+    "static/css/main.24a49963.css",
+    "static/js/main.9d682866.js"
   ]
 }
