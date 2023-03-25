@@ -41,10 +41,10 @@
 }
 
 #modalBG > section > .list {
-	margin: 4px 0 0 40px;
+	margin: 4px 0px 0 32px;
 	max-width: 600px;
 	position: relative;
-	width: 100%;
+	width: fit-content;
 }
 
 #modalBG > section > .warning {
