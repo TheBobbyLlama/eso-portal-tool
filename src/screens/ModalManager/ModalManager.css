@@ -15,6 +15,8 @@
 	align-items: center;
 	display: flex;
 	flex-direction: column;
+	max-height: calc(100vh - 60px);
+	overflow-y: auto;
 	width: 400px;
 }
 
@@ -22,8 +24,29 @@
 	margin-bottom: 10px;
 }
 
+#modalBG > section > h3 {
+	margin: 20px 0 4px 0;
+}
+
 #modalBG > section > div:last-child {
 	display: flex;
 	gap: 10px;
 	margin-top: 16px;
+}
+
+#modalBG > section > .list::before {
+	content: '●';
+	left: -20px;
+	position: absolute;
+}
+
+#modalBG > section > .list {
+	margin: 4px 0 0 40px;
+	max-width: 600px;
+	position: relative;
+	width: 100%;
+}
+
+#modalBG > section > .warning {
+	color: var(--error-color);
 }

@@ -7,6 +7,12 @@ function generateTextMarkup(text, index) {
 	switch(split[0]) {
 		case "CODE":
 			return <code key={index}>{split.slice(1).join(":")}</code>;
+		case "LIST":
+			return <div key={index} className="list">{split.slice(1).join(":")}</div>;
+		case "HEADER":
+			return <h3 key={index}>{split.slice(1).join(":")}</h3>;
+		case "WARNING":
+			return <h3 key={index} className="warning">{split.slice(1).join(":")}</h3>;
 		default:
 			return <p key={index}>{text}</p>;
 	}

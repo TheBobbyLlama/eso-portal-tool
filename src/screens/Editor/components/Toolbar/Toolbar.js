@@ -3,9 +3,22 @@ import { useDispatch, useSelector } from "react-redux";
 import { authSelectors } from "../../../../store/authSlice";
 import { modalActions, modalKey } from "../../../../store/modalSlice";
 import { townActions, townSelectors } from "../../../../store/townSlice";
-import { dbTransform } from "../../../../util";
+import { dbTransform, validateTown } from "../../../../util";
 
 import "./Toolbar.css";
+
+function doValidation(town) {
+	const result = validateTown(town);
+
+	if (result.length) {
+		return [
+			"WARNING:Warnings",
+			...result.map((warning) => `LIST:${warning}`)
+		];
+	} else {
+		return result;
+	}
+}
 
 function Toolbar() {
 	const user = useSelector(authSelectors.user);
@@ -33,7 +46,8 @@ function Toolbar() {
 				text: [
 					"This will create a new version of the addon's data file and save it to your computer. You can then replace the data file in your addon folder:",
 					"CODE:Documents\\Elder Scrolls Online\\live\\AddOns\\RoleplayTownPortals\\LocationData.lua",
-					"This can be done while the game is running, just use the /reloadui command to get the new data."
+					"This can be done while the game is running, just use the /reloadui command to get the new data.",
+					...doValidation(workingTown),
 				],
 				action: townActions.exportAddonData(exportData),
 				width: "800px",
@@ -46,7 +60,10 @@ function Toolbar() {
 			key: modalKey.generic,
 			data: {
 				title: "Confirm",
-				text: "Are you sure you want to save your changes?",
+				text: [
+						"Are you sure you want to save your changes?",
+						...doValidation(workingTown),
+				],
 				action: townActions.saveTownData(),
 			}
 		}));
