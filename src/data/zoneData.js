@@ -394,6 +394,7 @@ export const zoneData = [
 	{
 		id: 54,
 		name: "Pariah's Pinnacle",
+		map: "wrothgar_base",
 		size: "Manor",
 		style: "Orc",
 		icon: "https://images.uesp.net/6/6d/ON-icon-house-Pariah%27s_Pinnacle.png",
@@ -558,6 +559,7 @@ export const zoneData = [
 	{
 		id: 76,
 		name: "Thieves' Oasis",
+		map: "thievesoasisext_base",
 		size: "Manor",
 		style: "Redguard",
 		icon: "https://images.uesp.net/1/1f/ON-icon-house-Thieves%27_Oasis.png",
@@ -710,6 +712,14 @@ export const zoneData = [
 		size: "Manor",
 		style: "Breton",
 		icon: "https://images.uesp.net/4/43/ON-icon-house-Highhallow_Hold.png",
+	},
+	{
+		id: 98,
+		name: "Fogbreak Lighthouse",
+		map: "u37_fogbreaklighthouse_ext",
+		size: "Manor",
+		style: "Breton",
+		icon: "https://images.uesp.net/4/41/ON-icon-house-Fogbreak_Lighthouse.png",
 	},
 	// ZONE SECTION - IDs will be assigned programmatically!
 	{
