@@ -4,6 +4,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { modalActions, modalKey } from "../../../../store/modalSlice";
 import { townActions, townSelectors } from "../../../../store/townSlice";
 
+import IconSelect from "../IconSelect/IconSelect";
+
 function getDefaultFormData(portal) {
 	if (portal) {
 		return {
@@ -67,6 +69,10 @@ function PortalPanel({ location, portal }) {
 			setFormData(newData);
 			dispatch(townActions.setPortalData({ locationId: location.id, portalId: portal.id, data: newData }));
 		}
+	}
+
+	const changePortalIcon = (icon) => {
+		changePortalInfo({ target: { name: "icon", value: icon } });
 	}
 
 	const pastePortalData = () => {
@@ -137,6 +143,9 @@ function PortalPanel({ location, portal }) {
 						})}
 					</select>
 					<button name="destinations" title="Add Destination" disabled={!destOptions.length} onClick={addDestination}>+</button>
+				</div>
+				<div className="formGroup">
+					<IconSelect value={portal.icon} onChange={changePortalIcon} />
 				</div>
 			</div>
 			<div id="portalForm">

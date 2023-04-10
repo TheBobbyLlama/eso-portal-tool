@@ -1,3 +1,4 @@
+import iconData from "../data/iconData";
 import { zoneData } from "../data/zoneData";
 
 const locationMap = {
@@ -152,6 +153,8 @@ function createPortalTable(data, locationTable) {
 					entry.destinations.push(locationTable.findIndex((loc) => loc.internalId === dest));
 				});
 
+				entry.icon = portal.icon || "Door";
+
 				result.push(entry);
 			})
 		});
@@ -208,6 +211,8 @@ export function exportAddonData(data) {
 				if (portal.height) { result += `, height = ${portal.height}`; }
 				if (portal.nameOverride) { result += `, nameOverride = "${portal.nameOverride}"`; }
 				if (portal.portalDescription) { result += `, portalDescription = "${printDescription(portal.portalDescription)}"`; }
+
+				result += `, icon = "${iconData.find(icon => icon.name === portal.icon).icon}"`
 
 				result += "},\n";
 			});

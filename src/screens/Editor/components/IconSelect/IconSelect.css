@@ -1,0 +1,56 @@
+#iconSelect {
+	margin-top: 20px;
+	position: relative;
+}
+
+#iconSelect > img {
+	background-color: rgba(0, 0, 0, 0.1);
+	border-radius: 50%;
+	cursor: pointer;
+	height: 64px;
+	margin-left: 10px;
+	overflow: visible;
+	padding: 8px;
+	transition: background-color 0.1s ease-in-out;
+	width: 64px;
+}
+
+#iconSelect > img:hover {
+	background-color: rgba(128, 128, 128, 0.1);
+}
+
+#iconSelect #iconBG {
+	bottom: 0;
+	left: 0;
+	position: fixed;
+	right: 0;
+	top: 0;
+	z-index: 5;
+}
+
+#iconSelect #iconPicker {
+	background-color: var(--panel-inset);
+	display: flex;
+	flex-wrap: wrap;
+	gap: 4px;
+	height: 160px;
+	left: 0;
+	overflow-y: scroll;
+	position: absolute;
+	top: 0;
+	width: 160px;
+	z-index: 10;
+}
+
+#iconSelect #iconPicker > img {
+	border-radius: 4px;
+	cursor: pointer;
+	height: 32px;
+	overflow: visible;
+	transition: background-color 0.1s ease-in-out;
+	width: 32px;
+}
+
+#iconSelect #iconPicker > img:hover {
+	background-color: rgba(128, 128, 128, 0.25);
+}

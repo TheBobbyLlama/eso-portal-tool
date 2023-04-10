@@ -29,7 +29,6 @@
 }
 
 #portalPanel {
-	align-items: flex-start;
 	border-left: solid 1px var(--panel-border);
 	display: flex;
 	padding-left: 20px;
