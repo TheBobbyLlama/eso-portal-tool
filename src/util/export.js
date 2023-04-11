@@ -153,7 +153,7 @@ function createPortalTable(data, locationTable) {
 					entry.destinations.push(locationTable.findIndex((loc) => loc.internalId === dest));
 				});
 
-				entry.icon = portal.icon || "Door";
+				entry.icon = portal.icon;
 
 				result.push(entry);
 			})

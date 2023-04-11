@@ -189,7 +189,7 @@ function PortalPanel({ location, portal }) {
 					<input type="text" name="nameOverride" placeholder="Optional" value={formData.nameOverride} onChange={changePortalInfo} />
 				</div>
 				<div className="textBox">
-					<textarea name="portalDescription" value={formData.portalDescription} placeholder="Description (optional)" onChange={changePortalInfo}></textarea>
+					<textarea name="portalDescription" value={formData.portalDescription || ""} placeholder="Description (optional)" onChange={changePortalInfo}></textarea>
 				</div>
 			</div>
 		</div>

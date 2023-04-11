@@ -96,7 +96,7 @@ function LocationEditingPanel({ location }) {
 					<input type="text" name="owner" className={(typeof formData.houseId === "string") || (validateAccountName(formData.owner)) ? "" : "invalid"} disabled={typeof formData.houseId === "string"} value={formData.owner || ""} onChange={changeFormData} />
 				</div>
 				<div className="textBox">
-					<textarea name="description" disabled={typeof formData.houseId === "string"} value={formData.description} placeholder="Description (optional)" onChange={changeFormData}></textarea>
+					<textarea name="description" disabled={typeof formData.houseId === "string"} value={formData.description || ""} placeholder="Description (optional)" onChange={changeFormData}></textarea>
 				</div>
 			</div>
 			<div className="formGroup deleteLoc">
