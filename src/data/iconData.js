@@ -20,6 +20,16 @@ const iconData = [
 		icon: "/esoui/art/icons/mapkey/mapkey_antiquities.dds",
 	},
 	{
+		name: "Armory",
+		display: "servicepin_armory.png",
+		icon: "/esoui/art/icons/servicemappins/servicepin_armory.dds",
+	},
+	{
+		name: "Ayleid",
+		display: "poi_ayleidruin_complete.png",
+		icon: "/esoui/art/icons/poi/poi_ayleidruin_complete.dds"
+	},
+	{
 		name: "Bank",
 		display: "mapkey_bank.png",
 		icon: "/esoui/art/icons/mapkey/mapkey_bank.dds",
@@ -45,14 +55,49 @@ const iconData = [
 		icon: "/esoui/art/icons/mapkey/mapkey_ava_bridge_passable.dds",
 	},
 	{
+		name: "Camp",
+		display: "poi_camp_complete.png",
+		icon: "/esoui/art/icons/poi/poi_camp_complete.dds",
+	},
+	{
 		name: "Caravan",
 		display: "mapkey_caravan.png",
 		icon: "/esoui/art/icons/mapkey/mapkey_caravan.dds",
 	},
 	{
+		name: "Cave",
+		display: "poi_cave_complete.png",
+		icon: "/esoui/art/icons/poi/poi_cave_complete.dds",
+	},
+	{
+		name: "City",
+		display: "poi_city_complete.png",
+		icon: "/esoui/art/icons/poi/poi_city_complete.dds",
+	},
+	{
+		name: "Coffin",
+		display: "poi_cemetary_complete.png",
+		icon: "/esoui/art/icons/poi/poi_cemetary_complete.dds",
+	},
+	{
 		name: "Crafting Area",
 		display: "mapkey_crafting.png",
 		icon: "/esoui/art/icons/mapkey/mapkey_crafting.dds",
+	},
+	{
+		name: "Critic",
+		display: "emotecategoryicon_cheersjeers.png",
+		icon: "/esoui/art/icons/emotes/emotecategoryicon_cheersjeers.dds",
+	},
+	{
+		name: "Crypt",
+		display: "poi_crypt_complete.png",
+		icon: "/esoui/art/icons/poi/poi_crypt_complete.dds",
+	},
+	{
+		name: "Daedric",
+		display: "poi_daedricruin_complete.png",
+		icon: "/esoui/art/icons/poi/poi_daedricruin_complete.dds",
 	},
 	{
 		name: "Dark Anchor",
@@ -75,9 +120,24 @@ const iconData = [
 		icon: "RoleplayTownPortals/icons/doorbig.dds",
 	},
 	{
+		name: "Drink",
+		display: "emotecategoryicon_eatdrink.png",
+		icon: "/esoui/art/icons/emotes/emotecategoryicon_eatdrink.dds",
+	},
+	{
 		name: "Dungeon",
 		display: "mapkey_dungeon.png",
 		icon: "/esoui/art/icons/mapkey/mapkey_dungeon.dds",
+	},
+	{
+		name: "Dwemer",
+		display: "poi_dwemerruin_complete.png",
+		icon: "/esoui/art/icons/poi/poi_dwemerruin_complete.dds",
+	},
+	{
+		name: "Dwemer Lift",
+		display: "poi_u26_dwemergear_complete.png",
+		icon: "/esoui/art/icons/poi/poi_u26_dwemergear_complete.dds",
 	},
 	{
 		name: "Dye Station",
@@ -98,6 +158,11 @@ const iconData = [
 		name: "Entryway (Dangerous)",
 		display: "mapkey_solotrial.png",
 		icon: "/esoui/art/icons/mapkey/mapkey_solotrial.dds",
+	},
+	{
+		name: "Estate",
+		display: "poi_estate_complete.png",
+		icon: "/esoui/art/icons/poi/poi_estate_complete.dds",
 	},
 	{
 		name: "Farm",
@@ -140,14 +205,59 @@ const iconData = [
 		icon: "/esoui/art/icons/mapkey/mapkey_ava_milegate_passable.dds"
 	},
 	{
+		name: "Grove",
+		display: "poi_grove_complete.png",
+		icon: "/esoui/art/icons/poi/poi_grove_complete.dds",
+	},
+	{
+		name: "Hand",
+		display: "emotecategoryicon_ceremonial.png",
+		icon: "/esoui/art/icons/emotes/emotecategoryicon_ceremonial.dds",
+	},
+	{
+		name: "Handshake",
+		display: "emotecategoryicon_social.png",
+		icon: "/esoui/art/icons/emotes/emotecategoryicon_social.dds",
+	},
+	{
+		name: "Harp",
+		display: "emotecategoryicon_entertain.png",
+		icon: "/esoui/art/icons/emotes/emotecategoryicon_entertain.dds",
+	},
+	{
 		name: "House",
 		display: "mapkey_housing.png",
 		icon: "/esoui/art/icons/mapkey/mapkey_housing.dds",
 	},
 	{
+		name: "Horseshoe",
+		display: "poi_horserace_complete.png",
+		icon: "/esoui/art/icons/poi/poi_horserace_complete.dds",
+	},
+	{
 		name: "Jeweler",
 		display: "mapkey_jewelrycrafting.png",
 		icon: "/esoui/art/icons/mapkey/mapkey_jewelrycrafting.dds",
+	},
+	{
+		name: "Leather",
+		display: "servicepin_outfitter.png",
+		icon: "/esoui/art/icons/servicemappins/servicepin_outfitter.dds",
+	},
+	{
+		name: "Lighthouse",
+		display: "poi_lighthouse_complete.png",
+		icon: "/esoui/art/icons/poi/poi_lighthouse_complete.dds",
+	},
+	{
+		name: "Longship",
+		display: "poi_u26_nord_boat_complete.png",
+		icon: "/esoui/art/icons/poi/poi_u26_nord_boat_complete.dds",
+	},
+	{
+		name: "Longship2",
+		display: "poi_u26_nord_boat_pattern_complete.png",
+		icon: "/esoui/art/icons/poi/poi_u26_nord_boat_pattern_complete.dds",
 	},
 	{
 		name: "Lumbermill",
@@ -175,6 +285,11 @@ const iconData = [
 		icon: "/esoui/art/icons/mapkey/mapkey_mundus.dds",
 	},
 	{
+		name: "Museum",
+		display: "servicepin_museum.png",
+		icon: "/esoui/art/icons/servicemappins/servicepin_museum.dds",
+	},
+	{
 		name: "Outfit Station",
 		display: "mapkey_outfitstation.png",
 		icon: "/esoui/art/icons/mapkey/mapkey_outfitstation.dds",
@@ -193,6 +308,16 @@ const iconData = [
 		name: "Point of Interest",
 		display: "mapkey_areaofinterest.png",
 		icon: "/esoui/art/icons/mapkey/mapkey_areaofinterest.dds",
+	},
+	{
+		name: "Ruin",
+		display: "poi_ruin_complete.png",
+		icon: "/esoui/art/icons/poi/poi_ruin_complete.dds",
+	},
+	{
+		name: "Sewer",
+		display: "poi_sewer_complete.png",
+		icon: "/esoui/art/icons/poi/poi_sewer_complete.dds",
 	},
 	{
 		name: "Shield",
@@ -238,6 +363,16 @@ const iconData = [
 		name: "Town",
 		display: "mapkey_avatown.png",
 		icon: "/esoui/art/icons/mapkey/mapkey_avatown.dds",
+	},
+	{
+		name: "Tribute",
+		display: "servicepin_talesoftribute.png",
+		icon: "/esoui/art/icons/servicemappins/servicepin_talesoftribute.dds",
+	},
+	{
+		name: "Village",
+		display: "poi_town_complete.png",
+		icon: "/esoui/art/icons/poi/poi_town_complete.dds",
 	},
 	{
 		name: "Wayshrine",
