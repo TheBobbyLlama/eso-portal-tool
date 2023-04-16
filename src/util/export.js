@@ -42,7 +42,7 @@ function printDescription(description) {
 		return description;
 	}
 
-	const match = description.match(/^(\S+)(\s.+)$/);
+	const match = description.match(/^(\S+)(\s.+)$/m);
 	let result;
 
 	if (match.length === 3) {
