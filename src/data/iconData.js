@@ -240,6 +240,11 @@ const iconData = [
 		icon: "/esoui/art/icons/mapkey/mapkey_jewelrycrafting.dds",
 	},
 	{
+		name: "Lane",
+		display: "signpost.png",
+		icon: "RoleplayTownPortals/icons/signpost.dds",
+	},
+	{
 		name: "Leather",
 		display: "servicepin_outfitter.png",
 		icon: "/esoui/art/icons/servicemappins/servicepin_outfitter.dds",
@@ -350,6 +355,11 @@ const iconData = [
 		icon: "/esoui/art/icons/mapkey/mapkey_forwardcamp.dds",
 	},
 	{
+		name: "Telvanni",
+		display: "poi_mushromtower_complete.png",
+		icon: "/esoui/art/icons/poi/poi_mushromtower_complete.dds",
+	},
+	{
 		name: "Torch",
 		display: "mapkey_delve.png",
 		icon: "/esoui/art/icons/mapkey/mapkey_delve.dds",
@@ -363,6 +373,11 @@ const iconData = [
 		name: "Town",
 		display: "mapkey_avatown.png",
 		icon: "/esoui/art/icons/mapkey/mapkey_avatown.dds",
+	},
+	{
+		name: "Town Square",
+		display: "townsquare.png",
+		icon: "RoleplayTownPortals/icons/townsquare.dds",
 	},
 	{
 		name: "Tribute",

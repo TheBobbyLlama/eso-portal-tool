@@ -687,6 +687,7 @@ export const zoneData = [
 	{
 		id: 93,
 		name: "Agony's Ascent",
+		map: "u32_agonysascent_base",
 		size: "Manor",
 		style: "Other",
 		icon: "https://images.uesp.net/5/5f/ON-icon-house-Agony%27s_Ascent.png",
@@ -721,6 +722,22 @@ export const zoneData = [
 		style: "Breton",
 		icon: "https://images.uesp.net/4/41/ON-icon-house-Fogbreak_Lighthouse.png",
 	},
+	{
+		id: 99,
+		name: "Journey's End Lodgings",
+		map: "u38_necrom_base",
+		size: "Inn Room",
+		style: "Dunmer",
+		// icon: "",
+	},
+	{
+		id: 100,
+		name: "Emissary's Enclave",
+		map: "", // TODO
+		size: "Large House",
+		style: "Dunmer",
+		// icon: "",
+	},
 	// ZONE SECTION - IDs will be assigned programmatically!
 	{
 		name: "Alik'r Desert",
@@ -728,6 +745,13 @@ export const zoneData = [
 		size: "Zone",
 		style: "Redguard",
 		icon: "https://images.uesp.net/9/9d/ON-icon-Redguard.png",
+	},
+	{
+		name: "Apocrypha",
+		map: "u38_apocrypha_base",
+		size: "Zone",
+		style: "Other",
+		icon: "https://images.uesp.net/7/7f/ON-icon-ESO_Plus.png",
 	},
 	{
 		name: "Artaeum",
@@ -959,6 +983,13 @@ export const zoneData = [
 		size: "Zone",
 		style: "Altmer",
 		icon: "https://images.uesp.net/5/5e/ON-icon-Altmer.png",
+	},
+	{
+		name: "Telvanni Peninsula",
+		map: "u38_telvannipeninsula_base",
+		size: "Zone",
+		style: "Dunmer",
+		icon: "https://images.uesp.net/8/86/ON-icon-Dunmer.png",
 	},
 	{
 		name: "The Deadlands",
