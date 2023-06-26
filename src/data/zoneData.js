@@ -724,6 +724,14 @@ export const zoneData = [
 	},
 	{
 		id: 99,
+		name: "The Fair Winds",
+		map: "",
+		size: "Manor",
+		style: "Breton",
+		// icon: "",
+	},
+	{
+		id: 100,
 		name: "Journey's End Lodgings",
 		map: "u38_necrom_base",
 		size: "Inn Room",
@@ -731,7 +739,7 @@ export const zoneData = [
 		// icon: "",
 	},
 	{
-		id: 100,
+		id: 101,
 		name: "Emissary's Enclave",
 		map: "", // TODO
 		size: "Large House",
