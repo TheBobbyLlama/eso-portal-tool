@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/eso-portal-tool/static/css/main.eeeab54b.css",
-    "main.js": "/eso-portal-tool/static/js/main.1edb41d1.js",
+    "main.js": "/eso-portal-tool/static/js/main.bf594732.js",
     "static/js/787.f0c240ff.chunk.js": "/eso-portal-tool/static/js/787.f0c240ff.chunk.js",
     "static/media/spinner.gif": "/eso-portal-tool/static/media/spinner.7b4da7a15287c40931f1.gif",
     "static/media/RPTP.png": "/eso-portal-tool/static/media/RPTP.1da78abbf8044ed6a9ea.png",
     "index.html": "/eso-portal-tool/index.html",
     "main.eeeab54b.css.map": "/eso-portal-tool/static/css/main.eeeab54b.css.map",
-    "main.1edb41d1.js.map": "/eso-portal-tool/static/js/main.1edb41d1.js.map",
+    "main.bf594732.js.map": "/eso-portal-tool/static/js/main.bf594732.js.map",
     "787.f0c240ff.chunk.js.map": "/eso-portal-tool/static/js/787.f0c240ff.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.eeeab54b.css",
-    "static/js/main.1edb41d1.js"
+    "static/js/main.bf594732.js"
   ]
 }
