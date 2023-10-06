@@ -112,12 +112,12 @@ const iconData = [
 	{
 		name: "Door",
 		display: "door.png",
-		icon: "RoleplayTownPortals/icons/door.dds",
+		icon: "/RoleplayTownPortals/icons/door.dds",
 	},
 	{
 		name: "Door (Big)",
 		display: "doorbig.png",
-		icon: "RoleplayTownPortals/icons/doorbig.dds",
+		icon: "/RoleplayTownPortals/icons/doorbig.dds",
 	},
 	{
 		name: "Drink",
@@ -242,7 +242,7 @@ const iconData = [
 	{
 		name: "Lane",
 		display: "signpost.png",
-		icon: "RoleplayTownPortals/icons/signpost.dds",
+		icon: "/RoleplayTownPortals/icons/signpost.dds",
 	},
 	{
 		name: "Leather",
@@ -377,7 +377,7 @@ const iconData = [
 	{
 		name: "Town Square",
 		display: "townsquare.png",
-		icon: "RoleplayTownPortals/icons/townsquare.dds",
+		icon: "/RoleplayTownPortals/icons/townsquare.dds",
 	},
 	{
 		name: "Tribute",
