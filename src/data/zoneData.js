@@ -728,7 +728,7 @@ export const zoneData = [
 		map: "",
 		size: "Manor",
 		style: "Breton",
-		// icon: "",
+		icon: "https://images.uesp.net/e/ed/ON-icon-house-The_Fair_Winds.png",
 	},
 	{
 		id: 100,
@@ -736,7 +736,7 @@ export const zoneData = [
 		map: "u38_necrom_base",
 		size: "Inn Room",
 		style: "Dunmer",
-		// icon: "",
+		icon: "https://images.uesp.net/a/ac/ON-icon-house-Journey%27s_End_Lodgings.png",
 	},
 	{
 		id: 101,
@@ -744,7 +744,15 @@ export const zoneData = [
 		map: "", // TODO
 		size: "Large House",
 		style: "Dunmer",
-		// icon: "",
+		icon: "https://images.uesp.net/9/96/ON-icon-house-Emissary%27s_Enclave.png",
+	},
+	{
+		id: 104,
+		name: "Kelesan'ruhn",
+		map: "u39_eventhouse_ext",
+		size: "Medium House",
+		style: "Dunmer",
+		icon: "https://images.uesp.net/f/f6/ON-icon-house-Kelesan%27ruhn.png",
 	},
 	// ZONE SECTION - IDs will be assigned programmatically!
 	{
