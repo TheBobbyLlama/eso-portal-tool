@@ -747,12 +747,36 @@ export const zoneData = [
 		icon: "https://images.uesp.net/9/96/ON-icon-house-Emissary%27s_Enclave.png",
 	},
 	{
+		id: 102,
+		name: "Shadow Queen's Labyrinth",
+		map: "", // TODO
+		size: "Manor",
+		style: "Altmer",
+		icon: "https://images.uesp.net/3/38/ON-icon-house-Shadow_Queen%27s_Labyrinth.png"
+	},
+	{
 		id: 104,
 		name: "Kelesan'ruhn",
 		map: "u39_eventhouse_ext",
 		size: "Medium House",
 		style: "Dunmer",
 		icon: "https://images.uesp.net/f/f6/ON-icon-house-Kelesan%27ruhn.png",
+	},
+	{
+		id: 105,
+		name: "Gladesong Arboretum",
+		map: "",
+		size: "Manor",
+		style: "Breton",
+		icon: "https://images.uesp.net/4/4d/ON-icon-house-Gladesong_Arboretum.png"
+	},
+	{
+		id: 106,
+		name: "Tower of Unutterable Truths",
+		map: "",
+		size: "Manor",
+		style: "Other",
+		icon: "https://images.uesp.net/6/66/ON-icon-house-Tower_of_Unutterable_Truths.png"
 	},
 	// ZONE SECTION - IDs will be assigned programmatically!
 	{
