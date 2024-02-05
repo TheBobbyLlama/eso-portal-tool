@@ -765,7 +765,7 @@ export const zoneData = [
 	{
 		id: 105,
 		name: "Gladesong Arboretum",
-		map: "",
+		map: "u40_druidhouse_ext",
 		size: "Manor",
 		style: "Breton",
 		icon: "https://images.uesp.net/4/4d/ON-icon-house-Gladesong_Arboretum.png"
