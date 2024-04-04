@@ -695,6 +695,7 @@ export const zoneData = [
 	{
 		id: 94,
 		name: "Seaveil Spire",
+		map: "", // TODO
 		size: "Manor",
 		style: "Other",
 		icon: "https://images.uesp.net/4/4e/ON-icon-house-Seaveil_Spire.png",
@@ -710,6 +711,7 @@ export const zoneData = [
 	{
 		id: 96,
 		name: "Highhallow Hold",
+		map: "", // TODO
 		size: "Manor",
 		style: "Breton",
 		icon: "https://images.uesp.net/4/43/ON-icon-house-Highhallow_Hold.png",
@@ -773,11 +775,20 @@ export const zoneData = [
 	{
 		id: 106,
 		name: "Tower of Unutterable Truths",
-		map: "",
+		map: "u40_apochome_int_1",
 		size: "Manor",
 		style: "Other",
 		icon: "https://images.uesp.net/6/66/ON-icon-house-Tower_of_Unutterable_Truths.png"
 	},
+	{
+		id: 107,
+		name: "Willowpond Haven",
+		map: "u41_blackwoodlagoon_ext",
+		size: "Manor",
+		style: "Imperial",
+		icon: "https://images.uesp.net/e/e8/ON-icon-house-Willowpond_Haven.png"
+	},
+
 	// ZONE SECTION - IDs will be assigned programmatically!
 	{
 		name: "Alik'r Desert",
