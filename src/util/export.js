@@ -45,7 +45,7 @@ function printDescription(description) {
 	const match = description.match(/^(\S+)(\s.+)$/m);
 	let result;
 
-	if (match.length === 3) {
+	if (match?.length === 3) {
 		result = `|u25:0::${match[1]}|u${match[2]}`;
 	} else {
 		result =  description;
