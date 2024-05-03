@@ -757,6 +757,14 @@ export const zoneData = [
 		icon: "https://images.uesp.net/3/38/ON-icon-house-Shadow_Queen%27s_Labyrinth.png"
 	},
 	{
+		id: 103,
+		name: "Sword Singer's Redoubt",
+		map: "u41_redguardoasis_ext",
+		size: "Manor",
+		style: "Redguard",
+		icon: "https://images.uesp.net/6/69/ON-icon-house-Sword-Singer%27s_Redoubt.png"
+	},
+	{
 		id: 104,
 		name: "Kelesan'ruhn",
 		map: "u39_eventhouse_ext",
