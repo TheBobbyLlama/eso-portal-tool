@@ -695,7 +695,7 @@ export const zoneData = [
 	{
 		id: 94,
 		name: "Seaveil Spire",
-		map: "", // TODO
+		map: "u33_seaveilspireext_base",
 		size: "Manor",
 		style: "Other",
 		icon: "https://images.uesp.net/4/4e/ON-icon-house-Seaveil_Spire.png",
@@ -795,6 +795,14 @@ export const zoneData = [
 		size: "Manor",
 		style: "Imperial",
 		icon: "https://images.uesp.net/e/e8/ON-icon-house-Willowpond_Haven.png"
+	},
+	{
+		id: 111,
+		name: "Seabloom Villa",
+		map: "u43_auridoncottage_ext",
+		size: "Medium House",
+		style: "Altmer",
+		icon: "https://images.uesp.net/6/6a/ON-icon-house-Seabloom_Villa.png"
 	},
 
 	// ZONE SECTION - IDs will be assigned programmatically!
@@ -1076,6 +1084,13 @@ export const zoneData = [
 		size: "Zone",
 		style: "Dunmer",
 		icon: "https://images.uesp.net/8/86/ON-icon-Dunmer.png",
+	},
+	{
+		name: "West Weald",
+		map: "westwealdoverland_base",
+		size: "Zone",
+		style: "Imperial",
+		icon: "https://images.uesp.net/4/4d/ON-concept-Imperial_symbol.png"
 	},
 	{
 		name: "Western Skyrim",
