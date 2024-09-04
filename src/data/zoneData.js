@@ -797,6 +797,22 @@ export const zoneData = [
 		icon: "https://images.uesp.net/e/e8/ON-icon-house-Willowpond_Haven.png"
 	},
 	{
+		id: 109,
+		name: "Rosewine Retreat",
+		map: "",
+		size: "Inn Room",
+		style: "Imperial",
+		icon: "https://images.uesp.net/6/61/ON-icon-house-Rosewine_Retreat.png"
+	},
+	{
+		id: 110,
+		name: "Merrywine Estate",
+		map: "",
+		size: "Manor",
+		style: "Imperial",
+		icon: "https://images.uesp.net/5/5e/ON-icon-house-Merryvine_Estate.png"
+	},
+	{
 		id: 111,
 		name: "Seabloom Villa",
 		map: "u43_auridoncottage_ext",
