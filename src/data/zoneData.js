@@ -816,9 +816,25 @@ export const zoneData = [
 		id: 111,
 		name: "Seabloom Villa",
 		map: "u43_auridoncottage_ext",
-		size: "Medium House",
+		size: "Large House",
 		style: "Altmer",
 		icon: "https://images.uesp.net/6/6a/ON-icon-house-Seabloom_Villa.png"
+	},
+	{
+		id: 112,
+		name: "Haven of the Five Companions",
+		map: "u43_fivecompanionshouse_ext_01",
+		size: "Medium House",
+		style: "Imperial",
+		icon: "https://images.uesp.net/8/8a/ON-icon-house-Haven_of_the_Five_Companions.png"
+	},
+	{
+		id: 111,
+		name: "Kthendral Deep Mines",
+		map: "u44_blackreachdwemhome_ext_01",
+		size: "Manor",
+		style: "Other",
+		icon: "https://images.uesp.net/1/14/ON-icon-house-Kthendral_Deep_Mines.png"
 	},
 
 	// ZONE SECTION - IDs will be assigned programmatically!
