@@ -743,7 +743,7 @@ export const zoneData = [
 	{
 		id: 101,
 		name: "Emissary's Enclave",
-		map: "", // TODO
+		map: "u38_emissarysenclave_int_01",
 		size: "Large House",
 		style: "Dunmer",
 		icon: "https://images.uesp.net/9/96/ON-icon-house-Emissary%27s_Enclave.png",
@@ -806,8 +806,8 @@ export const zoneData = [
 	},
 	{
 		id: 110,
-		name: "Merrywine Estate",
-		map: "",
+		name: "Merryvine Estate",
+		map: "u42_colovianwinery_ext_01",
 		size: "Manor",
 		style: "Imperial",
 		icon: "https://images.uesp.net/5/5e/ON-icon-house-Merryvine_Estate.png"
@@ -829,12 +829,108 @@ export const zoneData = [
 		icon: "https://images.uesp.net/8/8a/ON-icon-house-Haven_of_the_Five_Companions.png"
 	},
 	{
-		id: 111,
+		id: 113,
 		name: "Kthendral Deep Mines",
 		map: "u44_blackreachdwemhome_ext_01",
 		size: "Manor",
 		style: "Other",
 		icon: "https://images.uesp.net/1/14/ON-icon-house-Kthendral_Deep_Mines.png"
+	},
+	{
+		id: 114,
+		name: "Grand Gallery of Tamriel",
+		map: "u44_museumhome_ext_01",
+		size: "Manor",
+		style: "Imperial",
+		icon: "https://images.uesp.net/a/af/ON-icon-house-Grand_Gallery_of_Tamriel.png"
+	},
+	{
+		id: 115,
+		name: "Shattered Mirror Isle",
+		map: "u45_mirrormoorhome_ext_02",
+		size: "Manor",
+		style: "Other",
+		icon: "https://images.uesp.net/3/30/ON-icon-house-Shattered_Mirror_Isle.png"
+	},
+	{
+		id: 116,
+		name: "Castle Skingrad",
+		map: "", // TODO
+		size: "Manor",
+		style: "Imperial",
+		icon: "https://images.uesp.net/0/06/ON-icon-house-Castle_Skingrad.png"
+	},
+	{
+		id: 117,
+		name: "Bismuth Steam Baths",
+		map: "u46_bathhouse_ext_01",
+		size: "Large",
+		style: "Altmer",
+		icon: "https://images.uesp.net/2/2f/ON-icon-house-Bismuth_Steam_Baths.png"
+	},
+	{
+		id: 118,
+		name: "The Sleepy Sloth",
+		map: "", // TODO
+		size: "Inn Room",
+		style: "Altmer",
+		icon: "https://images.uesp.net/e/e2/ON-icon-house-The_Sleepy_Sloth.png"
+	},
+	{
+		id: 119,
+		name: "Theater of the Ancestors",
+		map: "", // TODO
+		size: "Manor",
+		style: "Other",
+		icon: "https://images.uesp.net/9/90/ON-icon-house-Theater_of_the_Ancestors.png"
+	},
+	{
+		id: 120,
+		name: "Hiddenspring Cottage",
+		map: "", // TODO
+		size: "Medium",
+		style: "Imperial",
+		icon: "https://images.uesp.net/e/ec/ON-icon-house-Hiddenspring_Cottage.png"
+	},
+	{
+		id: 121,
+		name: "Wildgrown Chapel of Julianos",
+		map: "u47_bosmertreehouse_ext_01",
+		size: "Manor",
+		style: "Imperial",
+		icon: "https://images.uesp.net/d/d3/ON-icon-house-Wildgrown_Chapel_of_Julianos.png"
+	},
+	{
+		id: 122,
+		name: "Cradle of the Worm Colossus",
+		map: "", // TODO
+		size: "Manor",
+		style: "Other",
+		icon: "https://images.uesp.net/2/21/ON-icon-house-Cradle_of_the_Worm_Colossus.png"
+	},
+	{
+		id: 123,
+		name: "Druidspring Conservatory",
+		map: "", // TODO
+		size: "Manor",
+		style: "Imperial",
+		icon: "https://images.uesp.net/1/17/ON-icon-house-Druidspring_Conservatory.png"
+	},
+	{
+		id: 124,
+		name: "Night's Den",
+		map: "u49_fargravenightclub_int_02",
+		size: "Manor",
+		style: "Other",
+		icon: "https://images.uesp.net/a/a5/ON-icon-house-Night%27s_Den.png"
+	},
+	{
+		id: 125,
+		name: "Buccaneer Bay",
+		map: "", // TODO
+		size: "Manor",
+		style: "Redguard",
+		icon: "https://images.uesp.net/a/a3/ON-icon-house-Buccaneer_Bay.png"
 	},
 
 	// ZONE SECTION - IDs will be assigned programmatically!
